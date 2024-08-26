@@ -20,7 +20,6 @@ function App() {
         <Route path="/album-songs" element={<AlbumSongs />} />
         <Route path="/game/game-one" element={<GameOne />} />
         <Route path="/game/game-one/game" element={<GameOneGame />} />
-
       </Routes>
     </Router>
   );
