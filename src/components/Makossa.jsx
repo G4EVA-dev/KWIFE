@@ -2,14 +2,14 @@ import React from 'react';
 import { ARTISTS } from '../ARTISTS';
 import ArtistCard from './ArtistCard';
 
-function Popular() {
-  const popularArtists = ARTISTS.artists.slice(0, 4);
+function Makossa() {
+  const makossaArtists = ARTISTS.artists.filter(artist => artist.niche === "Makossa").slice(0, 4);
 
   return (
     <div className="overflow-x-auto whitespace-nowrap py-4 px-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-              <h2 className="text-xl font-bold mb-4">Popular Artists</h2>
+      <h2 className="text-xl font-bold mb-4">Makossa Artists</h2>
       <div className="flex space-x-4" style={{ paddingBottom: '20px' }}>
-        {popularArtists.map((artist) => (
+        {makossaArtists.map((artist) => (
           <ArtistCard key={artist.id} artist={artist} />
         ))}
       </div>
@@ -22,4 +22,4 @@ function Popular() {
   );
 }
 
-export default Popular;
+export default Makossa;
