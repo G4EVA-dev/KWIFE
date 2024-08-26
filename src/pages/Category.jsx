@@ -53,9 +53,12 @@ function Category() {
 
   return (
     <div className="relative">
-      <div className="flex w-full justify-end items-center p-[20px] text-green-500 leading-[60px] ">
-        <a href="#">Sign in</a>
-      </div>
+      <nav className="" >
+        <div className="flex w-full justify-end items-center p-[20px] text-green-500 leading-[60px] ">
+          <a href="#">Sign in</a>
+        </div>
+      </nav>
+
       <div className="w-full flex items-center justify-center flex-col ">
         <h1 className="font-normal text-[48px] leading-[60px] ">kwife</h1>
         <p className="mt-[20px] w-[319px] text-center text-[18px] ">
@@ -84,7 +87,10 @@ function Category() {
                 {item.name}
               </h3>
               {selectedCategories.includes(item.id) && (
-                <img src="/images/check.svg" className="text-white ml-auto mr-1 mb-1 " />
+                <img
+                  src="/images/check.svg"
+                  className="text-white ml-auto mr-1 mb-1 "
+                />
               )}
             </div>
           </div>
