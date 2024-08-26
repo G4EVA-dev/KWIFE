@@ -1,25 +1,18 @@
-import { useState } from "react";
-import { motion } from "framer-motion";
-import {
-  Menu,
-  Search,
-  Home as HomeIcon,
-  Music,
-  Star,
-  Radio,
-} from "lucide-react";
-import SearchBar from "../components/Searchbar";
-import CategoryList from "../components/CategoryList";
-import Footer from "../components/Footer";
-import Popular from "../components/Popular";
-import Makossa from "../components/Makossa";
-import Afropop from "../components/AfroPop";
-import Jazz from "../components/Jazz";
-import Bikutsi from "../components/Bikutsi";
-import { ARTISTS } from "../ARTISTS";
+import React, { useState } from 'react';
+import { motion } from 'framer-motion';
+import { Menu, Search, Home as HomeIcon, Music, Star, Radio } from 'lucide-react';
+import SearchBar from '../components/Searchbar';
+import CategoryList from '../components/CategoryList';
+import Footer from '../components/Footer';
+import Popular from '../components/Popular';
+import Makossa from '../components/Makossa';
+import Afropop from '../components/AfroPop';
+import Jazz from '../components/Jazz';
+import Bikutsi from '../components/Bikutsi';
+import { ARTISTS } from '../ARTISTS';
 
 function Home() {
-  const [searchQuery, setSearchQuery] = useState("");
+  const [searchQuery, setSearchQuery] = useState('');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const allArtists = [...ARTISTS.artists];
@@ -32,11 +25,11 @@ function Home() {
   );
 
   const sidebarItems = [
-    { icon: <HomeIcon />, label: "Home" },
-    { icon: <Search />, label: "Search" },
-    { icon: <Music />, label: "Library" },
-    { icon: <Star />, label: "Favorites" },
-    { icon: <Radio />, label: "Radio" },
+    { icon: <HomeIcon />, label: 'Home' },
+    { icon: <Search />, label: 'Search' },
+    { icon: <Music />, label: 'Library' },
+    { icon: <Star />, label: 'Favorites' },
+    { icon: <Radio />, label: 'Radio' },
   ];
 
   return (
@@ -76,7 +69,7 @@ function Home() {
         {isSidebarOpen && (
           <motion.div
             className="md:hidden fixed inset-0 bg-green-800 text-white p-4 z-50"
-            initial={{ x: "-100%" }}
+            initial={{ x: '-100%' }}
             animate={{ x: 0 }}
             transition={{ duration: 0.3 }}
           >
