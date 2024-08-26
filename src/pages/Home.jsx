@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import SearchBar from '../components/Searchbar';
 import CategoryList from '../components/CategoryList';
@@ -7,7 +8,8 @@ import Makossa from '../components/Makossa';
 import Afropop from '../components/AfroPop';
 import Jazz from '../components/Jazz';
 import Bikutsi from '../components/Bikutsi';
-import { ARTISTS } from '../ARTISTS';
+import { ARTISTS } from '../artists';
+
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState('');

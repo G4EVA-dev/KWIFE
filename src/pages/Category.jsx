@@ -1,114 +1,74 @@
-import { useState } from "react";
-import { useNavigate} from "react-router-dom";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-function Category() {
-  const history = useNavigate();
-  
-  const categories = [
-    {
-      id: "fashion-design",
-      name: "Fashion Design",
-      image: "/images/fashion.png",
-    },
-    {
-      id: "music",
-      name: "Music",
-      image: "/images/fashion.png",
-    },
-    {
-      id: "art",
-      name: "Visual Arts",
-      image: "/images/fashion.png",
-    },
-    {
-      id: "film",
-      name: "Movie Industry",
-      image: "/images/fashion.png",
-    },
-    {
-      id: "poetry",
-      name: "Poetry",
-      image: "/images/fashion.png",
-    },
-    {
-      id: "spoken-word",
-      name: "Spoken Word",
-      image: "/images/fashion.png",
-    },
-  ];
+const welcomePhrases = [
+  { language: "Bulu", phrase: "Mbôlô" },
+  { language: "Duala", phrase: "Ndolo" },
+  { language: "Ewondo", phrase: "Mbolo" },
+  { language: "Fang", phrase: "Mbolo" },
+  { language: "Fulfulde", phrase: "Sannu" },
+  { language: "Bassa", phrase: "Mbaŋge" },
+];
 
-  const [selectedCategories, setSelectedCategories] = useState([]);
+const colors = ["#007A5E", "#CE1126", "#FCD116"]; // Cameroon flag colors
 
-  const handleCategoryClick = (id) => {
-    setSelectedCategories((prevSelected) =>
-      prevSelected.includes(id)
-        ? prevSelected.filter((categoryId) => categoryId !== id)
-        : [...prevSelected, id]
-    );
-  };
+function WelcomeScreen() {
+  const [currentPhraseIndex, setCurrentPhraseIndex] = useState(0);
+  const [currentColorIndex, setCurrentColorIndex] = useState(0);
 
-  const handleContinueClick = () => {
-    history("/home");
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentPhraseIndex(
+        (prevIndex) => (prevIndex + 1) % welcomePhrases.length
+      );
+      setCurrentColorIndex((prevIndex) => (prevIndex + 1) % colors.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
-    <div className="relative">
-      <nav className="" >
-        <div className="flex w-full justify-end items-center p-[20px] text-green-500 leading-[60px] ">
-          <a href="#">Sign in</a>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-green-100 to-yellow-100">
+      <div className="text-center">
+        <h1 className="text-4xl md:text-6xl font-bold text-green-800 mb-8">
+          KWIFE
+        </h1>
+        <div className="relative h-48">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentPhraseIndex}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="absolute inset-0 flex flex-col items-center justify-center"
+            >
+              <h2
+                className="text-5xl md:text-7xl font-bold mb-4"
+                style={{ color: colors[currentColorIndex] }}
+              >
+                {welcomePhrases[currentPhraseIndex].phrase}
+              </h2>
+              <p className="text-2xl md:text-3xl text-gray-600 italic">
+                ({welcomePhrases[currentPhraseIndex].language})
+              </p>
+            </motion.div>
+          </AnimatePresence>
         </div>
-      </nav>
-
-      <div className="w-full flex items-center justify-center flex-col ">
-        <h1 className="font-normal text-[48px] leading-[60px] ">kwife</h1>
-        <p className="mt-[20px] w-[319px] text-center text-[18px] ">
-          What creative fields would you like to see work from?
-        </p>
       </div>
-      <div className="mt-7 grid grid-cols-2 gap-4 p-4">
-        {categories.map((item) => (
-          <div
-            key={item.id}
-            className="relative  cursor-pointer"
-            onClick={() => handleCategoryClick(item.id)}
-          >
-            <img
-              src={item.image}
-              alt={item.name}
-              className="w-full rounded-[10px] h-full object-cover transition duration-300 ease-in-out"
-              style={{
-                filter: selectedCategories.includes(item.id)
-                  ? "brightness(0.7)"
-                  : "brightness(1)",
-              }}
-            />
-            <div className="absolute rounded-[10px] inset-0 bg-black bg-opacity-30 p-2 flex flex-col justify-between items-start w-full ">
-              <h3 className="text-white text-right text-[16px] font-normal">
-                {item.name}
-              </h3>
-              {selectedCategories.includes(item.id) && (
-                <img
-                  src="/images/check.svg"
-                  className="text-white ml-auto mr-1 mb-1 "
-                />
-              )}
-            </div>
-          </div>
-        ))}
+      <div className="mt-16">
+        <svg width="200" height="100" viewBox="0 0 200 100">
+          <rect width="66.66" height="100" fill="#007A5E" />
+          <rect x="66.66" width="66.66" height="100" fill="#CE1126" />
+          <rect x="133.32" width="66.66" height="100" fill="#FCD116" />
+          <polygon
+            points="50,10 55,25 70,25 57.5,35 62.5,50 50,40 37.5,50 42.5,35 30,25 45,25"
+            fill="#FCD116"
+          />
+        </svg>
       </div>
-
-      {selectedCategories.length > 0 && (
-        <div className="fixed bottom-0 left-0 right-0 bg-white bg-opacity-10 p-4 shadow-lg flex justify-center">
-          <button
-            className="bg-[#059669] w-[175px] text-white px-6 py-2 rounded-[9px]"
-            onClick={handleContinueClick}
-          >
-            Continue
-          </button>
-        </div>
-      )}
     </div>
   );
 }
 
-export default Category;
+export default WelcomeScreen;
