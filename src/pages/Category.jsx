@@ -31,8 +31,8 @@ function WelcomeScreen() {
   }, []);
 
   return (
-    <div className="min-h-screen  bg-gradient-to-b from-green-100 to-yellow-100">
-      <h1 className="text-4xl md:text-6xl font-bold text-green-800 p-4 mb-2 text-left">
+    <div className="min-h-screen bg-gradient-to-b from-green-900 to-neutral-900">
+      <h1 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-b from-green-100 to-yellow-100 p-4 mb-2 text-left">
         KWIFE
       </h1>
       <div className="flex flex-col mt-8 items-center">
