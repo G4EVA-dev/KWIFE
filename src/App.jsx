@@ -1,9 +1,9 @@
-import Category from "./pages/Category";
+import Game from "./pages/game";
 
 function App() {
   return (
     <div>
-      <Category />
+      <Game />
     </div>
   );
 }
