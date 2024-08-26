@@ -7,7 +7,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Category />}></Route>
-        <Route path="/" element={<Game />}></Route>
+        <Route path="/game" element={<Game />}></Route>
       </Routes>
     </Router>
   );

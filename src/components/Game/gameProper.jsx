@@ -21,31 +21,10 @@ function gameProper() {
       time: "1 hour 15 min",
       review: "4.5",
     },
-    {
-      id: "film",
-      name: "Movie Industry",
-      question: "10 Question",
-      time: "1 hour 15 min",
-      review: "3.7",
-    },
-    {
-      id: "poetry",
-      name: "Poetry",
-      question: "10 Question",
-      time: "1 hour 15 min",
-      review: "4.0",
-    },
-    {
-      id: "spoken-word",
-      name: "Spoken Word",
-      question: "10 Question",
-      time: "1 hour 15 min",
-      review: "4.1",
-    },
   ];
 
   return (
-    <div className="w-[360px] p-3 ">
+    <div className="w-[360px] m-auto  ">
       <div className="w-full mt-3 flex items-center gap-3 justify-center ">
         <a href="#">Popular</a>
         <a href="#">Medumba</a>
@@ -81,7 +60,7 @@ function gameProper() {
           </div>
         ))}
       </div>
-      <div className="Continue w-full mt-4  ">
+      <div className="Continue w-full mt-7  ">
         <h1 className="font-bold text-2xl ">Continue Quiz</h1>
         <div className="w-full flex items-start bg-[#FFFFFF]  shadow-md gap-3 py-2 ">
           <div className="bg-[#C4C4C4] w-[127px] h-[120px] rounded-[3px]  "></div>
@@ -103,7 +82,7 @@ function gameProper() {
               </button>
             </div>
           </div>
-          <div className="flex items-center justify-start pr-[20px] gap-[2px]">
+          <div className="flex items-center justify-start gap-[2px]">
             <img src="/images/delete.svg" alt="Delete" />
           </div>
         </div>

@@ -1,14 +1,14 @@
 function GameHero() {
   return (
     <div>
-      <div className="bg-green-800 h-[200px] w-full p-[20px] ">
+      <div className="bg-green-900 h-[175px] w-full p-[20px]  ">
         <nav className=" flex justify-between items-center ">
           <img src="/images/harmbuger.svg" alt="Harmburger Menu" />
           <img src="/images/profile.svg" alt="Profie Picture" />
         </nav>
         <div className="mt-5">
           <p className="text-[14px] font-normal text-white ">Hello, James</p>
-          <h1 className="mt-[20px] text-white font-bold text-[20px] ">
+          <h1 className="mt-[10px] text-white font-bold text-[20px] ">
             Let&apos;s test your knowledge
           </h1>
         </div>
