@@ -17,10 +17,10 @@ function ArtistCard({ artist }) {
         alt={artist.name}
         className="w-24 h-24 mx-auto rounded-full object-cover"
       />
-      <h3 className="mt-2 text-sm font-semibold text-green-900">
+      <h3 className="mt-2 text-sm font-semibold text-white">
         {artist.name}
       </h3>
-      <p className="text-xs text-gray-500">{artist.region}</p>
+      <p className="text-xs text-gray-200">{artist.region}</p>
     </div>
   );
 }

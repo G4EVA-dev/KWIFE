@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLocation } from "react-router";
+import { Link } from "react-router-dom";
 
 const ArtistProfile = () => {
   const { state } = useLocation();
@@ -29,6 +30,8 @@ const ArtistProfile = () => {
             <p className="text-lg sm:text-xl text-neutral-400">
               {artist?.region || "Artist Region"}
             </p>
+           <div> <p className="text-sm mt-4"> Enjoy {artist?.name}'s traditional music learn dialects <Link to="/game" className="text font-extrabold text-amber-500">Here</Link></p>
+           </div>
           </div>
           <div className="text-center sm:text-right">
             <div className="bg-green-700 text-amber-100 px-4 py-2 rounded-full inline-block mb-4">

@@ -33,42 +33,42 @@ function Home() {
   ];
 
   return (
-    <div className="flex bg-gradient-to-b from-green-100 to-yellow-100 min-h-screen">
+    <div className="flex flex-col md:flex-row bg-gradient-to-b from-green-900 to-neutral-900 min-h-screen text-neutral-100">
       {/* Sidebar for desktop */}
       <motion.div
-        className="hidden md:flex flex-col w-64 bg-green-800 text-white p-4"
+        className="hidden md:flex flex-col w-64 bg-neutral-800 text-white p-4 shadow-lg"
         initial={{ x: -250 }}
         animate={{ x: 0 }}
         transition={{ duration: 0.3 }}
       >
-        <h1 className="text-2xl font-bold mb-8">KWIFE</h1>
+        <h1 className="text-3xl font-bold text-amber-500 mb-8">KWIFE</h1>
         {sidebarItems.map((item, index) => (
           <div
             key={index}
-            className="flex items-center mb-4 cursor-pointer hover:bg-green-700 p-2 rounded"
+            className="flex items-center mb-4 cursor-pointer hover:bg-neutral-700 p-2 rounded transition-colors duration-200"
           >
             {item.icon}
-            <span className="ml-2">{item.label}</span>
+            <span className="ml-2 text-lg">{item.label}</span>
           </div>
         ))}
       </motion.div>
 
       {/* Main content */}
-      <div className="flex-1 p-4">
+      <div className="flex-1 p-4 md:p-8">
         {/* Mobile header */}
-        <div className="md:hidden flex justify-between items-center mb-4">
+        <div className="md:hidden flex justify-between items-center mb-6">
           <Menu
             onClick={() => setIsSidebarOpen(!isSidebarOpen)}
-            className="cursor-pointer"
+            className="cursor-pointer text-amber-500"
           />
-          <h1 className="text-2xl font-bold">KWIFE</h1>
+          <h1 className="text-3xl font-bold text-amber-500">KWIFE</h1>
           <div className="w-6"></div> {/* Placeholder for balance */}
         </div>
 
         {/* Mobile sidebar */}
         {isSidebarOpen && (
           <motion.div
-            className="md:hidden fixed inset-0 bg-green-800 text-white p-4 z-50"
+            className="md:hidden fixed inset-0 bg-neutral-800 text-white p-4 z-50"
             initial={{ x: '-100%' }}
             animate={{ x: 0 }}
             transition={{ duration: 0.3 }}
@@ -76,16 +76,16 @@ function Home() {
             <div className="flex justify-end">
               <Menu
                 onClick={() => setIsSidebarOpen(false)}
-                className="cursor-pointer"
+                className="cursor-pointer text-amber-500"
               />
             </div>
             {sidebarItems.map((item, index) => (
               <div
                 key={index}
-                className="flex items-center mb-4 cursor-pointer hover:bg-green-700 p-2 rounded"
+                className="flex items-center mb-4 cursor-pointer hover:bg-neutral-700 p-2 rounded transition-colors duration-200"
               >
                 {item.icon}
-                <span className="ml-2">{item.label}</span>
+                <span className="ml-2 text-lg">{item.label}</span>
               </div>
             ))}
           </motion.div>
@@ -95,7 +95,7 @@ function Home() {
 
         {searchQuery ? (
           <div>
-            <h2 className="font-bold text-2xl mb-4 text-green-800">
+            <h2 className="font-bold text-2xl mb-4 text-amber-500">
               Search Results
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -103,7 +103,7 @@ function Home() {
                 filteredArtists.map((artist) => (
                   <motion.div
                     key={artist.id}
-                    className="bg-white rounded-lg shadow-md overflow-hidden"
+                    className="bg-neutral-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -113,15 +113,15 @@ function Home() {
                       className="w-full h-48 object-cover"
                     />
                     <div className="p-3 flex-grow flex flex-col">
-                      <h3 className="text-sm font-medium text-gray-900 mb-1 line-clamp-2">
+                      <h3 className="text-sm font-medium text-white mb-1 line-clamp-2">
                         {artist.name}
                       </h3>
-                      <p className="text-xs text-gray-600">{artist.niche}</p>
+                      <p className="text-xs text-neutral-400">{artist.niche}</p>
                     </div>
                   </motion.div>
                 ))
               ) : (
-                <p className="text-gray-600">No artists found.</p>
+                <p className="text-neutral-400">No artists found.</p>
               )}
             </div>
           </div>

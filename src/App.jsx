@@ -27,7 +27,6 @@ function App() {
         <Route path="/learn" element={<Learn />} />
         <Route path="/art" element={<ArtistProfile/>}/>
 
-
       </Routes>
     </Router>
   );
