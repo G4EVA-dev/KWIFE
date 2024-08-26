@@ -1,14 +1,7 @@
-import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import {
-  FaUser,
-  FaMusic,
-  FaCog,
-  FaSignOutAlt,
-  FaPlus,
-  FaToggleOn,
-  FaToggleOff,
-} from "react-icons/fa";
+import { useState } from "react";
+import { useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
+import { Settings, LogOut, Plus, ToggleLeft, ToggleRight } from "lucide-react";
 
 const PersonalAccountPage = () => {
   const { state } = useLocation();
@@ -46,107 +39,135 @@ const PersonalAccountPage = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-neutral-900 text-neutral-100 font-sans">
-      <header className="bg-green-900 p-4 sm:p-6">
+    <div className="flex flex-col min-h-screen bg-gradient-to-b from-green-100 to-yellow-100 text-green-800 font-sans">
+      <header className="bg-green-800 p-4 sm:p-6">
         <div className="container mx-auto max-w-6xl flex flex-col sm:flex-row items-center justify-between">
           <div className="flex items-center mb-4 sm:mb-0">
             <img
               src={user.profilePic || user.image}
               alt={user.name}
-              className="w-16 h-16 rounded-full object-cover border-2 border-amber-500 mr-4"
+              className="w-16 h-16 rounded-full object-cover border-2 border-yellow-400 mr-4"
             />
             <div>
-              <h1 className="text-2xl font-bold">{user.name}</h1>
-              <p className="text-sm text-neutral-300">{user.email || user.region}</p>
+              <h1 className="text-2xl font-bold text-white">{user.name}</h1>
+              <p className="text-sm text-green-200">
+                {user.email || user.region}
+              </p>
             </div>
           </div>
           <nav className="flex flex-wrap justify-center sm:justify-end space-x-4">
-            <button className="text-amber-500 hover:text-amber-400 transition duration-300">
-              <FaUser className="inline mr-2" /> Profile
-            </button>
-            <button className="text-amber-500 hover:text-amber-400 transition duration-300">
-              <FaMusic className="inline mr-2" /> My Music
-            </button>
-            <button className="text-amber-500 hover:text-amber-400 transition duration-300">
-              <FaCog className="inline mr-2" /> Settings
-            </button>
-            <button className="text-amber-500 hover:text-amber-400 transition duration-300">
-              <FaSignOutAlt className="inline mr-2" /> Logout
-            </button>
+            {[{ icon: Settings }, { icon: LogOut }].map(
+              ({ icon: Icon, index }) => (
+                <motion.button
+                  key={index}
+                  className="text-yellow-400 hover:text-yellow-300 transition duration-300 flex items-center"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Icon className="mr-2" size={20} />
+                </motion.button>
+              )
+            )}
           </nav>
         </div>
       </header>
 
       <main className="flex-grow container mx-auto max-w-6xl p-4 sm:p-6">
         <div className="flex flex-col sm:flex-row justify-between items-center mb-8">
-          <button
+          <motion.button
             onClick={toggleAvailability}
-            className="flex items-center bg-green-700 hover:bg-green-600 text-white font-bold py-2 px-4 rounded transition duration-300 mb-4 sm:mb-0"
+            className="flex items-center bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded transition duration-300 mb-4 sm:mb-0"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             {availableForHire ? (
-              <FaToggleOn className="mr-2" />
+              <ToggleRight className="mr-2" />
             ) : (
-              <FaToggleOff className="mr-2" />
+              <ToggleLeft className="mr-2" />
             )}
             Available for Hire
-          </button>
-          <button
+          </motion.button>
+          <motion.button
             onClick={openAddModal}
-            className="bg-amber-500 hover:bg-amber-400 text-neutral-900 font-bold py-2 px-4 rounded transition duration-300"
+            className="bg-yellow-400 hover:bg-yellow-500 text-green-800 font-bold py-2 px-4 rounded transition duration-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
-            <FaPlus className="inline mr-2" /> Add Song/Album
-          </button>
+            <Plus className="inline mr-2" /> Add Song/Album
+          </motion.button>
         </div>
 
         {showAddModal && (
-          <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4">
-            <div className="bg-neutral-800 rounded-lg p-6 w-full max-w-md">
-              <h2 className="text-2xl font-bold mb-4">Add New Song/Album</h2>
+          <motion.div
+            className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="bg-white rounded-lg p-6 w-full max-w-md"
+              initial={{ y: -50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 50, opacity: 0 }}
+            >
+              <h2 className="text-2xl font-bold mb-4 text-green-800">
+                Add New Song/Album
+              </h2>
               <form>
                 <div className="mb-4">
-                  <label className="block text-sm font-bold mb-2" htmlFor="title">
+                  <label
+                    className="block text-sm font-bold mb-2"
+                    htmlFor="title"
+                  >
                     Title
                   </label>
                   <input
                     type="text"
                     id="title"
-                    className="bg-neutral-700 text-white rounded w-full py-2 px-3 mb-3"
+                    className="bg-green-100 text-green-800 rounded w-full py-2 px-3 mb-3"
                   />
                 </div>
                 <div className="mb-4">
-                  <label className="block text-sm font-bold mb-2" htmlFor="type">
+                  <label
+                    className="block text-sm font-bold mb-2"
+                    htmlFor="type"
+                  >
                     Type
                   </label>
                   <select
                     id="type"
-                    className="bg-neutral-700 text-white rounded w-full py-2 px-3"
+                    className="bg-green-100 text-green-800 rounded w-full py-2 px-3"
                   >
                     <option value="song">Song</option>
                     <option value="album">Album</option>
                   </select>
                 </div>
                 <div className="flex justify-end">
-                  <button
+                  <motion.button
                     type="button"
                     onClick={closeAddModal}
-                    className="bg-neutral-600 hover:bg-neutral-500 text-white font-bold py-2 px-4 rounded mr-2"
+                    className="bg-green-200 hover:bg-green-300 text-green-800 font-bold py-2 px-4 rounded mr-2"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                   >
                     Cancel
-                  </button>
-                  <button
+                  </motion.button>
+                  <motion.button
                     type="submit"
-                    className="bg-amber-500 hover:bg-amber-400 text-neutral-900 font-bold py-2 px-4 rounded"
+                    className="bg-yellow-400 hover:bg-yellow-500 text-green-800 font-bold py-2 px-4 rounded"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                   >
                     Add
-                  </button>
+                  </motion.button>
                 </div>
               </form>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         )}
       </main>
 
-      <footer className="bg-neutral-800 text-neutral-400 p-4">
+      <footer className="bg-green-800 text-green-200 p-4">
         <div className="container mx-auto max-w-6xl text-center sm:text-left">
           <p>&copy; 2023 Your App. All rights reserved.</p>
         </div>

@@ -1,13 +1,16 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import SalsaMusic from "../assets/images/salsa music-cuate.svg";
+import { Link } from "react-router-dom";
 
 const welcomePhrases = [
-  { language: "Bulu", phrase: "Mbôlô" },
-  { language: "Duala", phrase: "Ndolo" },
-  { language: "Ewondo", phrase: "Mbolo" },
-  { language: "Fang", phrase: "Mbolo" },
-  { language: "Fulfulde", phrase: "Sannu" },
-  { language: "Bassa", phrase: "Mbaŋge" },
+  { language: "English", phrase: "Welcomes you" },
+  { language: "Bulu", phrase: "A yéne woé" },
+  { language: "Duala", phrase: "A sómba oa" },
+  { language: "Ewondo", phrase: "A yéne woé" },
+  { language: "Fang", phrase: "A yebe wa" },
+  { language: "Fulfulde", phrase: "E jaɓɓi ma" },
+  { language: "Bassa", phrase: "A yéne woé" },
 ];
 
 const colors = ["#007A5E", "#CE1126", "#FCD116"]; // Cameroon flag colors
@@ -28,44 +31,54 @@ function WelcomeScreen() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-green-100 to-yellow-100">
-      <div className="text-center">
-        <h1 className="text-4xl md:text-6xl font-bold text-green-800 mb-8">
-          KWIFE
-        </h1>
-        <div className="relative h-48">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key={currentPhraseIndex}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.5 }}
-              className="absolute inset-0 flex flex-col items-center justify-center"
-            >
-              <h2
-                className="text-5xl md:text-7xl font-bold mb-4"
-                style={{ color: colors[currentColorIndex] }}
-              >
-                {welcomePhrases[currentPhraseIndex].phrase}
-              </h2>
-              <p className="text-2xl md:text-3xl text-gray-600 italic">
-                ({welcomePhrases[currentPhraseIndex].language})
-              </p>
-            </motion.div>
-          </AnimatePresence>
+    <div className="min-h-screen  bg-gradient-to-b from-green-100 to-yellow-100">
+      <h1 className="text-4xl md:text-6xl font-bold text-green-800 p-4 mb-2 text-left">
+        KWIFE
+      </h1>
+      <div className="flex flex-col mt-8 items-center">
+        <div className="flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto w-full">
+          <div className="w-full md:w-1/2 mb-8 md:mb-0">
+            <img
+              src={SalsaMusic}
+              alt="Salsa Music"
+              className="w-full h-auto object-contain max-w-md mx-auto"
+            />
+          </div>
+          <div className="w-full md:w-1/2">
+            <div className="relative h-48 mb-8">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentPhraseIndex}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -20 }}
+                  transition={{ duration: 0.5 }}
+                  className="absolute inset-0 flex flex-col items-center justify-center"
+                >
+                  <h2
+                    className="text-3xl md:text-5xl font-bold mb-4 text-center"
+                    style={{ color: colors[currentColorIndex] }}
+                  >
+                    {welcomePhrases[currentPhraseIndex].phrase}
+                  </h2>
+                  <p className="text-xl md:text-2xl text-gray-600 italic text-center">
+                    ({welcomePhrases[currentPhraseIndex].language})
+                  </p>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="mt-16">
-        <svg width="200" height="100" viewBox="0 0 200 100">
-          <rect width="66.66" height="100" fill="#007A5E" />
-          <rect x="66.66" width="66.66" height="100" fill="#CE1126" />
-          <rect x="133.32" width="66.66" height="100" fill="#FCD116" />
-          <polygon
-            points="50,10 55,25 70,25 57.5,35 62.5,50 50,40 37.5,50 42.5,35 30,25 45,25"
-            fill="#FCD116"
-          />
-        </svg>
+
+        <Link to="/home" className="w-3/5 flex mt-8 justify-center">
+          <motion.button
+            className="mt-8 px-8 py-3 bg-green-600 text-white text-xl font-semibold rounded-full shadow-lg hover:bg-green-700 transition-colors duration-300 w-full md:w-[70%]"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Get Started
+          </motion.button>
+        </Link>
       </div>
     </div>
   );
