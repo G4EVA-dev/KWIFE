@@ -1,9 +1,10 @@
 import Category from "./pages/Category";
 import Game from "./pages/game";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-import Footer from "./components/Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Profile from "./components/Profile";
+import ArtistProfile from "./pages/ArtistProfile";
+import AlbumSongs from "./pages/AlbumSongs";
 
 function App() {
   return (
@@ -13,6 +14,8 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/home/profile" element={<Profile />} />
         <Route path="/game" element={<Game />} />
+        <Route path="/artist-profile" element={<ArtistProfile />} />
+        <Route path="/album-songs" element={<AlbumSongs />} />
       </Routes>
     </Router>
   );
