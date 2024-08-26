@@ -1,25 +1,30 @@
+import { Link } from "react-router-dom";
+
 function gameProper() {
   const quiz = [
     {
-      id: "uiux-design",
-      name: "UI UX Design",
-      question: "10 Question",
+      id: "bakweri",
+      name: "Bakweri Language App",
+      question: "5 Questions",
       time: "1 hour 15 min",
       review: "4.7",
+      route: "/game/game-one",
     },
     {
       id: "graphic Design",
-      name: "Graphic Design",
+      name: "Bakweri Language App",
       question: "10 Question",
       time: "1 hour 15 min",
       review: "4.1",
+      route: "/game/game-two",
     },
     {
       id: "art",
-      name: "Visual Arts",
+      name: "Bakweri Language App",
       question: "10 Question",
       time: "1 hour 15 min",
       review: "4.5",
+      route: "/game/game-three",
     },
   ];
 
@@ -33,30 +38,32 @@ function gameProper() {
       </div>
       <div className="w-full mt-5 grid grid-cols-1 gap-4 ">
         {quiz.map((item) => (
-          <div
-            key={item.id}
-            className="w-full flex items-center justify-center bg-[#FFFFFF]   rounded-[6px] p-2 shadow-md "
-          >
-            <div className="bg-[#C4C4C4] w-[127px] h-[96px] rounded-[3px] "></div>
-            <div className="rounded-[10px] h-[96px] gap-[2px]  p-2 flex flex-col  items-start w-full ">
-              <h3 className="text-green-600 text-[16px] font-bold">
-                {item.name}
-              </h3>
-              <p className="text-[#999999] text-[16px] font-normal  flex items-center justify-center gap-[2px] ">
-                <img src="/images/question.svg" alt="Question" />
-                {item.question}
-              </p>
-              <p className="text-[#999999] text-[16px] font-normal  flex items-center justify-center gap-[2px] ">
-                <img src="/images/timer.svg" alt="Timer" />
-                {item.time}
-              </p>
-            </div>
-            <div>
-              <p className="text-green-300 font-bold text-[16px]  flex items-center justify-center pr-[20px] gap-[2px] ">
-                <img src="/images/star.svg" alt="Timer" />
-                {item.review}
-              </p>
-            </div>
+          <div key={item.id}>
+            <Link
+              to={item.route}
+              className="w-full flex items-center justify-center bg-[#FFFFFF]   rounded-[6px] p-2 shadow-md "
+            >
+              <div className="bg-[#C4C4C4] w-[127px] h-[96px] rounded-[3px] "></div>
+              <div className="rounded-[10px] h-[96px] gap-[2px]  p-2 flex flex-col  items-start w-full ">
+                <h3 className="text-green-600 text-[16px] font-bold">
+                  {item.name}
+                </h3>
+                <p className="text-[#999999] text-[16px] font-normal  flex items-center justify-center gap-[2px] ">
+                  <img src="/images/question.svg" alt="Question" />
+                  {item.question}
+                </p>
+                <p className="text-[#999999] text-[16px] font-normal  flex items-center justify-center gap-[2px] ">
+                  <img src="/images/timer.svg" alt="Timer" />
+                  {item.time}
+                </p>
+              </div>
+              <div>
+                <p className="text-green-300 font-bold text-[16px]  flex items-center justify-center pr-[20px] gap-[2px] ">
+                  <img src="/images/star.svg" alt="Timer" />
+                  {item.review}
+                </p>
+              </div>
+            </Link>
           </div>
         ))}
       </div>

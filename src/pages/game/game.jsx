@@ -1,5 +1,5 @@
-import GameHero from "../components/Game/gameHero";
-import GameProper from "../components/Game/gameProper";
+import GameHero from "../../components/Game/gameHero";
+import GameProper from "../../components/Game/gameProper";
 
 function Game() {
   return (
