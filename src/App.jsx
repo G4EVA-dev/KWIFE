@@ -8,6 +8,8 @@ import AlbumSongs from "./pages/AlbumSongs";
 import GameOne from "./pages/game/game-one";
 import GameOneGame from "./pages/game/game-one-game";
 import Learn from "./pages/learn";
+import People from "./components/Learn/people";
+import QuizPage from "./components/Learn/quizSection";
 
 function App() {
   return (
@@ -23,6 +25,10 @@ function App() {
         <Route path="/game/game-one/game" element={<GameOneGame />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/learn" element={<Learn />} />
+        <Route path="/learn/people" element={<People />} />
+        <Route path="/learn/people/quiz" element={<QuizPage />} />
+
+
       </Routes>
     </Router>
   );

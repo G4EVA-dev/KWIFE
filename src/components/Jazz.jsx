@@ -1,5 +1,5 @@
 import React from 'react';
-import { ARTISTS } from '../ARTISTS';
+import { ARTISTS } from '../artists';
 import ArtistCard from './ArtistCard';
 
 function Jazz() {

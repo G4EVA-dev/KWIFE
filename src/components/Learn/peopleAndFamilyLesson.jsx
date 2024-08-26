@@ -1,55 +1,77 @@
 // PeopleAndFamilyLesson.js
-import { useState } from "react";
-import VocabCard from "./VocabCard";
-import QuizSection from "./QuizSection";
+import VocabCard from "./vocabCard";
+import { Link } from "react-router-dom";
 
 const vocabulary = [
-  { word: "mòtò", translation: "person", image: "person.svg" },
-  { word: "ŋmànà", translation: "child", image: "child.svg" },
-  { word: "mólɔ̀n", translation: "woman", image: "woman.svg" },
-  { word: "mòmí", translation: "man", image: "man.svg" },
-  { word: "tátá", translation: "father", image: "father.svg" },
-  { word: "nyàŋgó", translation: "mother", image: "mother.svg" },
+  {
+    word: "mòtò",
+    translation: "Grand Father",
+    image: "/images/grandFather.png",
+  },
+  { word: "ŋmànà", translation: "Grand Mother", image: "child.svg" },
+  { word: "mólɔ̀n", translation: "Mother", image: "/images/woman.png" },
+  { word: "mòmí", translation: "Father", image: "/images/man.png" },
+  { word: "tátá", translation: "father", image: "/images/father.png" },
+  { word: "nyàŋgó", translation: "mother", image: "/images/mother.png" },
 ];
 
 function PeopleAndFamilyLesson() {
-  const [showQuiz, setShowQuiz] = useState(false);
-
   return (
-    <div className="max-w-4xl mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center mb-8">
-        People and Family in Mokpe
-      </h1>
-
-      {/* Vocabulary Section */}
-      <div className="mb-12">
-        <h2 className="text-2xl font-semibold mb-4">Vocabulary</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {vocabulary.map((item, index) => (
-            <VocabCard
-              key={index}
-              word={item.word}
-              translation={item.translation}
-              image={item.image}
-            />
-          ))}
-        </div>
+    <div>
+      <div className="bg-green-900 h-[175px] text-white p-4">
+        <nav className="flex justify-between items-center">
+          <Link to="/learn" className="flex items-center gap-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="white"
+              className="h-6 w-6"
+              aria-label="Back"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+              />
+            </svg>
+            <h1 className="text-white text-lg font-semibold">Learn</h1>
+          </Link>
+        </nav>
+        <h1 className=" mt-3 text-3xl font-bold text-center mb-8">
+          People and Family in Mokpe
+        </h1>
       </div>
 
-      {/* Practice Button */}
-      {!showQuiz && (
+      <div className="max-w-4xl mx-auto px-4 py-8">
+        {/* Vocabulary Section */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-semibold ">Vocabulary</h2>
+          <p className="text-[14px] mt-2 mb-4 ">
+            Click on Card to reveal translation
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3  gap-4">
+            {vocabulary.map((item, index) => (
+              <VocabCard
+                key={index}
+                word={item.word}
+                translation={item.translation}
+                image={item.image}
+              />
+            ))}
+          </div>
+        </div>
+
         <div className="text-center">
-          <button
-            onClick={() => setShowQuiz(true)}
+          <Link
+            to="/learn/people/quiz"
             className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
           >
-            Practice Now!
-          </button>
+            Take the Quiz!
+          </Link>
         </div>
-      )}
-
-      {/* Quiz Section */}
-      {showQuiz && <QuizSection vocabulary={vocabulary} />}
+      </div>
     </div>
   );
 }

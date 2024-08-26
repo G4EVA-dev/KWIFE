@@ -13,10 +13,10 @@ import CategoryList from "../components/CategoryList";
 import Footer from "../components/Footer";
 import Popular from "../components/Popular";
 import Makossa from "../components/Makossa";
-import Afropop from "../components/AfroPop";
+import Afropop from "../components/Afropop";
 import Jazz from "../components/Jazz";
 import Bikutsi from "../components/Bikutsi";
-import { ARTISTS } from "../ARTISTS";
+import { ARTISTS } from "../artists";
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState("");

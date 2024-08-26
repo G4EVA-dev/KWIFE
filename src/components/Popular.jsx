@@ -1,4 +1,4 @@
-import { ARTISTS } from "../ARTISTS";
+import { ARTISTS } from "../artists";
 import ArtistCard from "./ArtistCard";
 
 function Popular() {

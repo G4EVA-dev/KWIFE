@@ -1,3 +1,4 @@
+import React from 'react';
 import PeopleAndFamilyLesson from "./peopleAndFamilyLesson";
 
 function People() {
