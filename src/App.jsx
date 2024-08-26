@@ -7,6 +7,7 @@ import ArtistProfile from "./pages/ArtistProfile";
 import AlbumSongs from "./pages/AlbumSongs";
 import GameOne from "./pages/game/game-one";
 import GameOneGame from "./pages/game/game-one-game";
+import Auth from "./pages/Auth";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/home" element={<Home />} />
         <Route path="/home/profile" element={<Profile />} />
         <Route path="/game" element={<Game />} />
+        <Route path="/auth" element ={<Auth/>}/>
         <Route path="/artist-profile" element={<ArtistProfile />} />
         <Route path="/album-songs" element={<AlbumSongs />} />
         <Route path="/game/game-one" element={<GameOne />} />

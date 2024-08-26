@@ -8,10 +8,11 @@ import Makossa from '../components/Makossa';
 import Afropop from '../components/AfroPop';
 import Jazz from '../components/Jazz';
 import Bikutsi from '../components/Bikutsi';
-import { ARTISTS } from '../artists';
+import { ARTISTS } from '../ARTISTS';
 
 
 function Home() {
+    
   const [searchQuery, setSearchQuery] = useState('');
 
   // Combine all artists to allow searching across all sections
@@ -26,6 +27,7 @@ function Home() {
 
   return (
     <div>
+        <h2 className='text-xl font-bold text-green-700 p-5 pb-3 mx-2'>KWIFE</h2>
                <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 
       {searchQuery ? (
