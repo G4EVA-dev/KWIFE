@@ -25,6 +25,7 @@ function App() {
         <Route path="/game/game-one/game" element={<GameOneGame />} />
          <Route path="/profile" element = {<Profile/>}/>
         <Route path="/learn" element={<Learn />} />
+        <Route path="/art" element={<ArtistProfile/>}/>
 
 
       </Routes>
