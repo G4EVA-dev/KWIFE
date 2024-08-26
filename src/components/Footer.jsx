@@ -24,7 +24,7 @@ function Footer() {
           }`}
         />
       </Link>
-      <Link to="/learn">
+      <Link to="/game">
         <BookOpenIcon
           onClick={() => handleClick("book")}
           className={`h-6 w-6 cursor-pointer ${

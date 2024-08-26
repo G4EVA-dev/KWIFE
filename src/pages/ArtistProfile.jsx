@@ -1,6 +1,8 @@
 import { useState } from "react";
+import { useLocation } from "react-router";
 
 const ArtistProfile = () => {
+  const { state } = useLocation();
   const [cowrieSent, setCowrieSent] = useState(false);
 
   const sendCowrie = () => {
