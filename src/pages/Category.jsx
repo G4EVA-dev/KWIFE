@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useNavigate} from "react-router-dom";
 
 function Category() {
+  const history = useNavigate();
+  
   const categories = [
     {
       id: "fashion-design",
@@ -42,6 +45,10 @@ function Category() {
         ? prevSelected.filter((categoryId) => categoryId !== id)
         : [...prevSelected, id]
     );
+  };
+
+  const handleContinueClick = () => {
+    history("/home");
   };
 
   return (
@@ -86,7 +93,10 @@ function Category() {
 
       {selectedCategories.length > 0 && (
         <div className="fixed bottom-0 left-0 right-0 bg-white bg-opacity-10 p-4 shadow-lg flex justify-center">
-          <button className="bg-[#059669] w-[175px] text-white px-6 py-2 rounded-[9px]">
+          <button
+            className="bg-[#059669] w-[175px] text-white px-6 py-2 rounded-[9px]"
+            onClick={handleContinueClick}
+          >
             Continue
           </button>
         </div>
