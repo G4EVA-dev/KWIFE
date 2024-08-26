@@ -1,10 +1,13 @@
 import Category from "./pages/Category";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div>
-      <Category />
-    </div>
+   <Router>
+    <Routes>
+      <Route path="/" element={<Category/>}></Route>
+    </Routes>
+   </Router>
   );
 }
 
