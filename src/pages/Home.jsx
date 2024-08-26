@@ -1,16 +1,18 @@
-import React from 'react'
-import SearchBar from '../components/Searchbar'
-import CategoryList from '../components/CategoryList'
-import Footer from '../components/Footer'
+import React from 'react';
+import SearchBar from '../components/Searchbar';
+import CategoryList from '../components/CategoryList';
+import Footer from '../components/Footer';
+import Popular from '../components/Popular'; // Added this import to match the HEAD version
 
-function  Home  (){
+function Home() {
   return (
     <div>
-        <SearchBar/>
-        <CategoryList/>
-        <Footer/>
+      <SearchBar />
+      <CategoryList />
+      <Popular /> {/* Included this component to match the HEAD version */}
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
