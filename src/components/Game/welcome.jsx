@@ -27,11 +27,26 @@ const Welcome = ({ startQuiz }) => {
 
       <Link to="/game/game-one" className="mt-4">
         <motion.button
-          className="w-full bg-white-500 text-black py-3 rounded-lg font-bold text-lg"
+          className="w-full bg-white-500 text-black py-3 flex justify-center items-center gap-3 rounded-lg font-bold text-lg"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          Go Back
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={1.5}
+            stroke="black"
+            className="h-6 w-6"
+            aria-label="Back"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+            />
+          </svg>
+          <h1 className="text-black text-lg font-semibold">Detail Quiz</h1>
         </motion.button>
       </Link>
     </motion.div>
