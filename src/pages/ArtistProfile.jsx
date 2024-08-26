@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useLocation } from "react-router";
+import { Link } from "react-router-dom";
 
 const ArtistProfile = () => {
   const { state } = useLocation();
@@ -10,22 +11,27 @@ const ArtistProfile = () => {
     setTimeout(() => setCowrieSent(false), 3000);
   };
 
+  // Destructure artist data from state
+  const { artist } = state || {}; // Use fallback if state is undefined
+
   return (
     <div className="bg-neutral-900 min-h-screen text-neutral-100 font-sans">
       <header className="bg-gradient-to-b from-green-900 to-neutral-900 p-4 sm:p-8">
         <div className="container mx-auto flex flex-col sm:flex-row items-center">
           <img
-            src="/path/to/artist-image.jpg"
-            alt="Mballa Elanga"
+            src={artist?.image || "/path/to/placeholder-image.jpg"} // Use artist image or placeholder
+            alt={artist?.name || "Artist Name"}
             className="w-32 h-32 sm:w-48 sm:h-48 rounded-full object-cover border-4 border-amber-500 mb-4 sm:mb-0 sm:mr-8"
           />
           <div className="flex-grow text-center sm:text-left mb-4 sm:mb-0">
             <h1 className="text-4xl sm:text-6xl font-bold mb-2">
-              Mballa Elanga
+              {artist?.name || "Artist Name"}
             </h1>
             <p className="text-lg sm:text-xl text-neutral-400">
-              Cameroonian Folk Artist
+              {artist?.region || "Artist Region"}
             </p>
+           <div> <p className="text-sm mt-4"> Enjoy {artist?.name}'s traditional music learn dialects <Link to="/game" className="text font-extrabold text-amber-500">Here</Link></p>
+           </div>
           </div>
           <div className="text-center sm:text-right">
             <div className="bg-green-700 text-amber-100 px-4 py-2 rounded-full inline-block mb-4">
@@ -92,10 +98,10 @@ const ArtistProfile = () => {
             About
           </h2>
           <p className="text-base sm:text-lg text-neutral-300">
-            Mballa Elanga is a renowned Cameroonian artist dedicated to
+            {artist?.name} is a renowned Cameroonian artist dedicated to
             preserving and promoting traditional folk music through modern
             interpretations. With roots deep in the cultural heritage of
-            Cameroon, Mballa&lsquo;s music is a bridge between past and present,
+            Cameroon, {artist?.name}&lsquo;s music is a bridge between past and present,
             inviting listeners on a journey through the rich tapestry of African
             rhythms and melodies.
           </p>
@@ -104,7 +110,7 @@ const ArtistProfile = () => {
 
       <footer className="bg-neutral-800 text-neutral-400 p-4 sm:p-6 mt-8">
         <div className="container mx-auto text-center sm:text-left">
-          <p>&copy; 2024 Mballa Elanga. All rights reserved.</p>
+          <p>&copy; 2024 {artist?.name}. All rights reserved.</p>
         </div>
       </footer>
     </div>
