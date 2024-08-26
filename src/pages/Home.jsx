@@ -1,8 +1,7 @@
-import React from 'react';
-import SearchBar from '../components/Searchbar';
-import CategoryList from '../components/CategoryList';
-import Footer from '../components/Footer';
-import Popular from '../components/Popular'; // Added this import to match the HEAD version
+import SearchBar from "../components/Searchbar";
+import CategoryList from "../components/CategoryList";
+import Footer from "../components/Footer";
+import Popular from "../components/Popular"; // Added this import to match the HEAD version
 
 function Home() {
   return (

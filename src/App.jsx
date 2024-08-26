@@ -1,5 +1,5 @@
 import Category from "./pages/Category";
-import Game from "./pages/game";
+import Game from "./pages/game/game";
 import Home from "./pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Profile from "./components/Profile";
