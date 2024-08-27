@@ -32,11 +32,6 @@ function Header() {
                 Quiz
               </a>
             </li>
-            <li>
-              <a href="#" className="hover:text-blue-200">
-                Profile
-              </a>
-            </li>
           </ul>
         </nav>
       </div>

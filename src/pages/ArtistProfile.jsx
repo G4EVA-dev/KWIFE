@@ -78,6 +78,26 @@ const ArtistProfile = () => {
   return (
     <div className="bg-neutral-900 min-h-screen text-neutral-100 font-sans">
       <header className="bg-gradient-to-b from-green-900 to-neutral-900 p-4 sm:p-8">
+        <nav className="mt-1 mb-4  flex justify-between items-center">
+          <Link to="/home" className="flex items-center gap-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="white"
+              className="h-6 w-6"
+              aria-label="Back"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+              />
+            </svg>
+            <h1 className="text-white text-lg font-semibold">Home</h1>
+          </Link>
+        </nav>
         <div className="container mx-auto flex flex-col sm:flex-row items-center">
           <img
             src={artist?.image || "/path/to/placeholder-image.jpg"} // Use artist image or placeholder
@@ -111,7 +131,7 @@ const ArtistProfile = () => {
             <br />
             <button
               onClick={sendCowrie}
-              className="bg-amber-500 text-neutral-900 px-6 py-3 rounded-full text-lg font-bold hover:bg-amber-400 transition duration-300 mr-3"
+              className="bg-amber-500 text-neutral-900 px-6 py-3 rounded-full text-lg font-bold hover:bg-amber-400 transition duration-300 mr-3 flex justify-center items-center "
             >
               <img
                 src="/images/cowrie.png"
