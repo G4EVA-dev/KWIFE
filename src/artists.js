@@ -229,6 +229,28 @@ export const ARTISTS = {
       description: "Popular highlife and Afrobeats artist",
       cowries: 0,
       reviews: []
+    },
+    {
+      id: 21,
+      name: "Flavour N'abania",
+      region: "Southwest",
+      niche: "Highlife",
+      price: 5000,
+      image: pic2,
+      description: "Popular highlife and Afrobeats artist",
+      cowries: 0,
+      reviews: []
+    },
+    {
+      id: 22,
+      name: "Flavour N'abania",
+      region: "Southwest",
+      niche: "Highlife",
+      price: 5000,
+      image: pic2,
+      description: "Popular highlife and Afrobeats artist",
+      cowries: 0,
+      reviews: []
     }
   ]
 };

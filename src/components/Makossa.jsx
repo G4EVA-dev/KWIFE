@@ -1,11 +1,10 @@
-import React from "react";
 import { ARTISTS } from "../artists";
 import ArtistCard from "./ArtistCard";
 
 function Makossa() {
   const makossaArtists = ARTISTS.artists
     .filter((artist) => artist.niche === "Makossa")
-    .slice(0, 4);
+    .slice(0, 7);
 
   return (
     <div>

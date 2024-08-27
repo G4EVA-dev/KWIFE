@@ -2,7 +2,7 @@ import { ARTISTS } from "../artists";
 import ArtistCard from "./ArtistCard";
 
 function Popular() {
-  const popularArtists = ARTISTS.artists.slice(0, 4);
+  const popularArtists = ARTISTS.artists.slice(0, 7);
 
   return (
     <div className="mt-4">
