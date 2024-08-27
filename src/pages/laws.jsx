@@ -1,5 +1,3 @@
-import React from "react";
-
 const Laws = () => {
   return (
     <div className="bg-gradient-to-b from-green-900 to-neutral-900 min-h-screen text-neutral-100">

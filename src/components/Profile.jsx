@@ -55,7 +55,10 @@ const PersonalAccountPage = () => {
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-green-100 to-yellow-100 text-green-800 font-sans">
       <header className="bg-green-800 p-4 sm:p-6">
-        <Link to="/home" className="mt-2 mb-3 flex justify-between items-center">
+        <Link
+          to="/home"
+          className="mt-2 mb-3 flex justify-between items-center"
+        >
           <button className="flex items-center gap-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"

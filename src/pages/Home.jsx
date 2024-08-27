@@ -15,6 +15,7 @@ import { Link } from "react-router-dom";
 function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [selectedRegion, setSelectedRegion] = useState("");
 
   const allArtists = [...ARTISTS.artists];
 
@@ -24,6 +25,19 @@ function Home() {
       artist.niche.toLowerCase().includes(searchQuery.toLowerCase()) ||
       artist.region.toLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  // Filter artists by region
+  const filteredRegions = selectedRegion
+    ? ARTISTS.artists.filter((artist) => artist.region === selectedRegion)
+    : ARTISTS.artists;
+
+  const handleRegionClick = (region) => {
+    setSelectedRegion(region);
+  };
+
+  const handleClearFilter = () => {
+    setSelectedRegion("");
+  };
 
   const sidebarItems = [
     { icon: <HomeIcon />, label: "Home", slug: "/home" },
@@ -94,14 +108,24 @@ function Home() {
 
         <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 
-        {searchQuery ? (
+        {searchQuery || selectedRegion ? (
           <div>
-            <h2 className="font-bold text-2xl mb-4 text-amber-500">
-              Search Results
-            </h2>
+            <div className="flex justify-between items-center mb-4">
+              <h2 className="font-bold text-2xl text-amber-500">
+                {searchQuery ? "Search Results" : "Filtered Results"}
+              </h2>
+              {searchQuery || selectedRegion ? (
+                <button
+                  onClick={handleClearFilter}
+                  className="text-blue-400 hover:text-blue-600 transition duration-300 ease-in-out"
+                >
+                  Clear Filter
+                </button>
+              ) : null}
+            </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {filteredArtists.length > 0 ? (
-                filteredArtists.map((artist) => (
+              {(searchQuery ? filteredArtists : filteredRegions).length > 0 ? (
+                (searchQuery ? filteredArtists : filteredRegions).map((artist) => (
                   <motion.div
                     key={artist.id}
                     className="bg-neutral-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
@@ -128,7 +152,7 @@ function Home() {
           </div>
         ) : (
           <>
-            <CategoryList />
+            <CategoryList selectedRegion={selectedRegion} setSelectedRegion={setSelectedRegion} />
             <Popular artists={filteredArtists} />
             <Makossa artists={filteredArtists} />
             <Afropop artists={filteredArtists} />
