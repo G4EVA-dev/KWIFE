@@ -233,7 +233,7 @@ const PersonalAccountPage = () => {
                     <source src={upload.file} type="audio/mpeg" />
                     Your browser does not support the audio element.
                   </audio>
-                ) : (
+                ) : ( 
                   <video controls className="w-full mb-2">
                     <source src={upload.file} type="video/mp4" />
                     Your browser does not support the video element.
