@@ -107,14 +107,14 @@ function QuizPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg "
+      className="max-w-md mx-auto  p-6 bg-green-900 h-[200px]  md:border-2 md:mt-4 "
     >
-      <h2 className="text-2xl font-bold mb-4 text-center">
+      <h2 className="text-2xl mt-5 text-white font-bold mb-4 text-center">
         Mokpe Quiz: People and Family
       </h2>
       <div className="flex justify-between items-center mb-4">
-        <p className="text-lg font-semibold">Score: {score}</p>
-        <p className="text-lg">Lives: {"❤️".repeat(lives)}</p>
+        <p className="text-lg text-white font-semibold">Score: {score}</p>
+        <p className="text-lg text-white ">Lives: {"❤️".repeat(lives)}</p>
       </div>
       <motion.div
         initial={{ y: 20, opacity: 0 }}

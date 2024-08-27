@@ -8,11 +8,15 @@ const vocabulary = [
     translation: "Grand Father",
     image: "/images/grandFather.png",
   },
-  { word: "ŋmànà", translation: "Grand Mother", image: "/images/grandMother.png" },
-  { word: "mólɔ̀n", translation: "Mother", image: "/images/woman.png" },
-  { word: "mòmí", translation: "Father", image: "/images/man.png" },
-  { word: "tátá", translation: "father", image: "/images/father.png" },
-  { word: "nyàŋgó", translation: "mother", image: "/images/mother.png" },
+  {
+    word: "ŋmànà",
+    translation: "Grand Mother",
+    image: "/images/grandMother.png",
+  },
+  { word: "emolána", translation: "Woman", image: "/images/woman.png" },
+  { word: "mòmí", translation: "Man", image: "/images/man.png" },
+  { word: "tátE", translation: "Father", image: "/images/father.png" },
+  { word: "iyakE", translation: "mother", image: "/images/mother.png" },
 ];
 
 function PeopleAndFamilyLesson() {
