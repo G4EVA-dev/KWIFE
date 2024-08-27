@@ -30,9 +30,10 @@ function Auth({ onSuccessfulAuth }) {
         alert('Authentication failed');
 
         localStorage.setItem("authToken", authToken);
-        console.log("Authentication successful:", authToken); // Log success
+        console.log("Authentication successful:", authToken); 
+      }// Log success
         if (onSuccessfulAuth) onSuccessfulAuth();
-      } else {
+      else {
         alert("Authentication failed");
         console.log("Authentication failed"); // Log failure
 
