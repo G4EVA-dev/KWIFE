@@ -26,7 +26,7 @@ export const ARTISTS = {
       niche: "Afrobeat",
       price: 5000,
       image: pic19,
-      description: "Legendary Cameroonian Afrobeat Singer",
+      description: "Legendary Cameroonian Afrobeat Singer and Compozer",
       cowries: 0,
       reviews: [],
     },
