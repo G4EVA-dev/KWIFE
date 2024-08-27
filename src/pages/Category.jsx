@@ -59,7 +59,7 @@ function WelcomeScreen() {
                     className="text-3xl md:text-5xl font-bold mb-4 text-center"
                     style={{ color: colors[currentColorIndex] }}
                   >
-                    {welcomePhrases[currentPhraseIndex].phrase}
+                    {welcomePhrases[currentPhraseIndex].phrase}👋
                   </h2>
                   <p className="text-xl md:text-2xl text-gray-600 italic text-center">
                     ({welcomePhrases[currentPhraseIndex].language})

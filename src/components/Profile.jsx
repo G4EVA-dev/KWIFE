@@ -8,6 +8,7 @@ const PersonalAccountPage = () => {
   const { state } = useLocation();
   const [availableForHire, setAvailableForHire] = useState(false);
   const [showAddModal, setShowAddModal] = useState(false);
+  const [audioFile, setAudioFile] = useState(null);
 
   const user = state?.artist || {
     name: "Acha Nfon",
@@ -39,10 +40,29 @@ const PersonalAccountPage = () => {
     setShowAddModal(false);
   };
 
+  const handleFileChange = (event) => {
+    setAudioFile(event.target.files[0]);
+  };
+
+  const handleFormSubmit = (event) => {
+    event.preventDefault();
+    if (audioFile) {
+      // Handle the upload process here
+      console.log("Uploading:", audioFile.name);
+      // Close the modal after upload
+      closeAddModal();
+    } else {
+      alert("Please select an audio file to upload.");
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-green-100 to-yellow-100 text-green-800 font-sans">
       <header className="bg-green-800 p-4 sm:p-6">
-        <Link to="/home" className="mt-2 mb-3 flex justify-between items-center">
+        <Link
+          to="/home"
+          className="mt-2 mb-3 flex justify-between items-center"
+        >
           <button className="flex items-center gap-4">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -134,7 +154,7 @@ const PersonalAccountPage = () => {
               <h2 className="text-2xl font-bold mb-4 text-green-800">
                 Add New Song/Album
               </h2>
-              <form>
+              <form onSubmit={handleFormSubmit}>
                 <div className="mb-4">
                   <label
                     className="block text-sm font-bold mb-2"
@@ -162,6 +182,21 @@ const PersonalAccountPage = () => {
                     <option value="song">Song</option>
                     <option value="album">Album</option>
                   </select>
+                </div>
+                <div className="mb-4">
+                  <label
+                    className="block text-sm font-bold mb-2"
+                    htmlFor="audio"
+                  >
+                    Upload Audio
+                  </label>
+                  <input
+                    type="file"
+                    id="audio"
+                    accept="audio/*"
+                    className="bg-green-100 text-green-800 rounded w-full py-2 px-3"
+                    onChange={handleFileChange}
+                  />
                 </div>
                 <div className="flex justify-end">
                   <motion.button

@@ -13,7 +13,9 @@ const ArtistProfile = () => {
   useEffect(() => {
     const fetchSongs = async () => {
       try {
-        const response = await fetch("https://nobility-nodejs-backend-deployment.onrender.com/api/songs");
+        const response = await fetch(
+          "https://nobility-nodejs-backend-deployment.onrender.com/api/songs"
+        );
         const data = await response.json();
         setSongs(data);
       } catch (error) {
@@ -28,7 +30,9 @@ const ArtistProfile = () => {
   useEffect(() => {
     const fetchAlbums = async () => {
       try {
-        const response = await fetch("https://nobility-nodejs-backend-deployment.onrender.com/api/albums");
+        const response = await fetch(
+          "https://nobility-nodejs-backend-deployment.onrender.com/api/albums"
+        );
         const data = await response.json();
         setAlbums(data);
       } catch (error) {
@@ -80,7 +84,7 @@ const ArtistProfile = () => {
               <p className="text-sm mt-4">
                 Enjoy {artist?.name}'s traditional music learn dialects{" "}
                 <Link
-                  to="/game"
+                  to="/learn"
                   className="text font-extrabold text-amber-500"
                 >
                   Here
@@ -194,7 +198,9 @@ const ArtistProfile = () => {
               className="w-12 h-12 sm:w-16 sm:h-16 rounded-md object-cover mr-4"
             />
             <div>
-              <h3 className="font-bold text-sm sm:text-base">{currentSong.title}</h3>
+              <h3 className="font-bold text-sm sm:text-base">
+                {currentSong.title}
+              </h3>
               <p className="text-xs sm:text-sm text-neutral-400">
                 {currentSong.album ? currentSong.album.title : "Unknown Album"}
               </p>

@@ -37,6 +37,30 @@ const lessons = [
     category: "Body Parts and Health",
     slug: "/learn/health",
   },
+  {
+    id: 7,
+    title: "Alphaets",
+    category: "Body Parts and Health",
+    slug: "/learn/alphabet",
+  },
+  {
+    id: 8,
+    title: "Numbers",
+    category: "Body Parts and Health",
+    slug: "/learn/numbers",
+  },
+  {
+    id: 9,
+    title: "Health and Feelings",
+    category: "Body Parts and Health",
+    slug: "/learn/health",
+  },
+  {
+    id: 10,
+    title: "Food",
+    category: "Body Parts and Health",
+    slug: "/learn/food",
+  },
 ];
 
 function LessonList() {
