@@ -96,6 +96,7 @@ const ArtistProfile = () => {
             <div className="bg-green-700 text-amber-100 px-4 py-2 rounded-full inline-block mb-4">
               Available for hire
             </div>
+          
             <br />
             <button
               onClick={sendCowrie}

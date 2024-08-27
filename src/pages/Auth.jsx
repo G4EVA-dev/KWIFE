@@ -24,16 +24,24 @@ function Auth({ onSuccessfulAuth }) {
       }
 
       if (authToken) {
-        localStorage.setItem("authToken", authToken);
-        console.log("Authentication successful:", authToken); // Log success
+        localStorage.setItem('authToken', authToken);
         if (onSuccessfulAuth) onSuccessfulAuth();
       } else {
+        alert('Authentication failed');
+
+        localStorage.setItem("authToken", authToken);
+        console.log("Authentication successful:", authToken); 
+      }// Log success
+        if (onSuccessfulAuth) onSuccessfulAuth();
+      else {
         alert("Authentication failed");
         console.log("Authentication failed"); // Log failure
+
       }
     } catch (err) {
       console.error("Authentication error:", err);
     }
+    console.log()
   };
 
   const loginUser = async (email, password) => {
@@ -47,7 +55,8 @@ function Auth({ onSuccessfulAuth }) {
       }
     );
     const data = await response.json();
-    console.log("Login response:", data); // Log response data
+
+    console.log("Login response:", data); // Log respo
     return data.token; // Adjust this if your API returns the token differently
   };
 
@@ -62,7 +71,9 @@ function Auth({ onSuccessfulAuth }) {
       }
     );
     const data = await response.json();
+
     console.log("Registration response:", data); // Log response data
+
     return data.token; // Adjust this if your API returns the token differently
   };
 
