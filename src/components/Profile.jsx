@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Settings, LogOut, Plus, ToggleLeft, ToggleRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Settings, LogOut, Plus, ToggleLeft, ToggleRight } from "lucide-react";
 
 const PersonalAccountPage = () => {
   const { state } = useLocation();
@@ -80,18 +80,20 @@ const PersonalAccountPage = () => {
             </div>
           </div>
           <nav className="flex flex-wrap justify-center sm:justify-end space-x-4">
-            {[{ icon: Settings }, { icon: LogOut }].map(
-              ({ icon: Icon, index }) => (
-                <motion.button
-                  key={index}
-                  className="text-yellow-400 hover:text-yellow-300 transition duration-300 flex items-center"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Icon className="mr-2" size={20} />
-                </motion.button>
-              )
-            )}
+            <motion.button
+              className="text-yellow-400 hover:text-yellow-300 transition duration-300 flex items-center"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Settings className="mr-2" size={20} />
+            </motion.button>
+            <motion.button
+              className="text-yellow-400 hover:text-yellow-300 transition duration-300 flex items-center"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <LogOut className="mr-2" size={20} />
+            </motion.button>
           </nav>
         </div>
       </header>
