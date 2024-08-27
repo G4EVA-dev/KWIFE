@@ -25,7 +25,7 @@ export const ARTISTS = {
       niche: "Makossa",
       price: 5000,
       image: pic10,
-      description: "Legendary saxophonist and pioneer of Afro-jazz.",
+      description: "Legendary saxophonist and pioneer of Afro-jazz",
       cowries: 0,
       reviews: [],
     },
