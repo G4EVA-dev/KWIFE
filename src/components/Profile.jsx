@@ -83,12 +83,11 @@ const PersonalAccountPage = () => {
           </Link>
         </nav>
         <div className="container mx-auto max-w-6xl flex flex-col sm:flex-row items-center justify-between">
-          <div className="flex items-center mb-4 sm:mb-0">
-            <img
-              src={user.profilePic || user.image}
-              alt={user.name}
-              className="w-16 h-16 rounded-full object-cover border-2 border-yellow-400 mr-4"
-            />
+          <div className="flex items-center mb-4 gap-2 sm:mb-0">
+            <div className="w-16 h-16 rounded-full flex items-center justify-center border-2 border-yellow-400">
+              <h1 className="text-white">GU</h1>
+            </div>
+
             <div>
               <h1 className="text-2xl font-bold text-white">{user.name}</h1>
               <p className="text-sm text-green-200">
