@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ChevronRight } from "lucide-react";
 
-const CategoryList = () => {
+const CategoryList = ({ selectedRegion, setSelectedRegion }) => {
   const navigate = useNavigate();
 
   const regions = [
@@ -18,17 +18,17 @@ const CategoryList = () => {
     "West",
   ];
 
-  const handleRegionClick = (region) => {
-    navigate(`/music/${region.toLowerCase().replace(" ", "-")}`);
-  };
-
   const handleSeeMoreClick = () => {
     navigate("/all-regions");
   };
 
+  const handleRegionClick = (region) => {
+    setSelectedRegion(region);
+  };
+
   return (
     <motion.div
-      className="md:p-6 mt-3 md:mb-2"
+      className="mt-3 md:mb-2"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -51,7 +51,9 @@ const CategoryList = () => {
             <motion.button
               key={region}
               onClick={() => handleRegionClick(region)}
-              className="bg-green-100 hover:bg-green-200 text-gray-800 font-semibold py-2 px-4 rounded-full transition duration-300 ease-in-out whitespace-nowrap flex-shrink-0"
+              className={`bg-green-100 hover:bg-green-200 text-gray-800 font-semibold py-2 px-4 rounded-full transition duration-300 ease-in-out whitespace-nowrap flex-shrink-0 ${
+                selectedRegion === region ? "bg-green-200" : ""
+              }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >

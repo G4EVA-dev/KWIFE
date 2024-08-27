@@ -13,6 +13,7 @@ import People from "./components/Learn/people";
 import QuizPage from "./components/Learn/quizSection";
 import LyricsModule from "./components/LyricsModule";
 import Laws from "./pages/laws";
+import Adamawa from "./pages/Adamawa";
 
 function App() {
   return (
@@ -34,6 +35,8 @@ function App() {
         <Route path="/art" element={<ArtistProfile />} />
         <Route path="/lyrics" element={<LyricsModule/>}/>
         <Route path="/laws" element={<Laws />} />
+        <Route path="/home/adamawa" element={<Adamawa />} />
+
 
       </Routes>
     </Router>
