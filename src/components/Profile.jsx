@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Settings, LogOut, Plus, ToggleLeft, ToggleRight, Music, Video } from "lucide-react";
-import { Settings, LogOut, Plus, ToggleLeft, ToggleRight } from "lucide-react";
+
 import { Link } from "react-router-dom";
 
 
