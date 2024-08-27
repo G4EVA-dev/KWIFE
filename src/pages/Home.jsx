@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { Menu, Book, Home as HomeIcon, Scale, UserRound } from "lucide-react";
 import SearchBar from "../components/Searchbar";
 import CategoryList from "../components/CategoryList";
