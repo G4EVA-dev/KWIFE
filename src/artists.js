@@ -15,17 +15,18 @@ import pic15 from "./assets/images/petit.jpg";
 import pic16 from "./assets/images/ladyPonce.jpg";
 import pic17 from "./assets/images/mrLeo.jpg";
 import pic18 from "./assets/images/Salatiel.jpeg";
+import pic19 from "./assets/images/ko-c.jpg";
 
 export const ARTISTS = {
   artists: [
     {
       id: 1,
-      name: "Manuella",
-      region: "Littoral",
-      niche: "Makossa",
+      name: "KO-c",
+      region: "Southwest",
+      niche: "Afrobeat",
       price: 5000,
-      image: pic10,
-      description: "Legendary saxophonist and pioneer of Afro-jazz",
+      image: pic19,
+      description: "Legendary Cameroonian Afrobeat Singer and Compozer",
       cowries: 0,
       reviews: [],
     },
@@ -53,12 +54,12 @@ export const ARTISTS = {
     },
     {
       id: 4,
-      name: "Richard Bona",
-      region: "East",
-      niche: "Jazz",
+      name: "Manu Dibango",
+      region: "center",
+      niche: "makossa",
       price: 6000,
-      image: pic4,
-      description: "Internationally acclaimed bassist and vocalist",
+      image: pic10,
+      description: "Legendary Saxophonists",
       cowries: 0,
       reviews: [],
     },
@@ -292,6 +293,28 @@ export const ARTISTS = {
       price: 5000,
       image: pic2,
       description: "Popular highlife and Afrobeats artist",
+      cowries: 0,
+      reviews: [],
+    },
+    {
+      id: 26,
+      name: "Grand Barack",
+      region: "Littoral",
+      niche: "Makossa",
+      price: 4000,
+      image: pic12,
+      description: "Energetic performer and makossa innovator",
+      cowries: 0,
+      reviews: [],
+    },
+    {
+      id: 26,
+      name: "Boss k",
+      region: "North",
+      niche: "Jazz",
+      price: 4000,
+      image: pic12,
+      description: "Energetic performer and makossa innovator",
       cowries: 0,
       reviews: [],
     },
