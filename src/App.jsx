@@ -11,6 +11,7 @@ import Auth from "./pages/Auth";
 import Learn from "./pages/learn";
 import People from "./components/Learn/people";
 import QuizPage from "./components/Learn/quizSection";
+import LyricsModule from "./components/LyricsModule";
 import Laws from "./pages/laws";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
         <Route path="/learn/people" element={<People />} />
         <Route path="/learn/people/quiz" element={<QuizPage />} />
         <Route path="/art" element={<ArtistProfile />} />
+        <Route path="/lyrics" element={<LyricsModule/>}/>
         <Route path="/laws" element={<Laws />} />
 
       </Routes>
