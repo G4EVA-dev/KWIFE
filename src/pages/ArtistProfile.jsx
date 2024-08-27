@@ -93,14 +93,14 @@ const ArtistProfile = () => {
             </div>
           </div>
           <div className="text-center sm:text-right">
-            <div className="bg-green-700 text-amber-100 px-4 py-2 rounded-full inline-block mb-4">
+            <div className="bg-green-700 text-amber-100 px-4 py-2 rounded-full inline-block mb-4 mr-4">
               Available for hire
             </div>
           
             <br />
             <button
               onClick={sendCowrie}
-              className="bg-amber-500 text-neutral-900 px-6 py-3 rounded-full text-lg font-bold hover:bg-amber-400 transition duration-300"
+              className="bg-amber-500 text-neutral-900 px-6 py-3 rounded-full text-lg font-bold hover:bg-amber-400 transition duration-300 mr-3"
             >
               Send a Cowrie
             </button>
@@ -108,6 +108,7 @@ const ArtistProfile = () => {
               <p className="text-amber-500 mt-2">Thank you for your support!</p>
             )}
           </div>
+          <Link to='/lyrics' className="font-bold text-xl">Learn my popular lyrics</Link>
         </div>
       </header>
 
