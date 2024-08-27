@@ -7,6 +7,14 @@ import pic6 from "./assets/images/pic6.jpg";
 import pic7 from "./assets/images/pic7.jpg";
 import pic8 from "./assets/images/pic8.jpg";
 import pic9 from "./assets/images/pic9.jpg";
+import pic10 from "./assets/images/manuDibango.png";
+import pic12 from "./assets/images/pic12.jpg";
+import pic13 from "./assets/images/locko.jpg";
+import pic14 from "./assets/images/charlote.jpg";
+import pic15 from "./assets/images/petit.jpg";
+import pic16 from "./assets/images/ladyPonce.jpg";
+import pic17 from "./assets/images/mrLeo.jpg";
+import pic18 from "./assets/images/Salatiel.jpeg";
 
 export const ARTISTS = {
   artists: [
@@ -16,10 +24,10 @@ export const ARTISTS = {
       region: "Littoral",
       niche: "Makossa",
       price: 5000,
-      image: pic1,
+      image: pic10,
       description: "Legendary saxophonist and pioneer of Afro-jazz",
       cowries: 0,
-      reviews: []
+      reviews: [],
     },
     {
       id: 2,
@@ -27,10 +35,10 @@ export const ARTISTS = {
       region: "Centre",
       niche: "Afropop",
       price: 3500,
-      image: pic2,
+      image: pic14,
       description: "Soulful singer known for her emotional ballads",
       cowries: 0,
-      reviews: []
+      reviews: [],
     },
     {
       id: 3,
@@ -38,10 +46,10 @@ export const ARTISTS = {
       region: "Littoral",
       niche: "Makossa",
       price: 4000,
-      image: pic3,
+      image: pic15,
       description: "Energetic performer and makossa innovator",
       cowries: 0,
-      reviews: []
+      reviews: [],
     },
     {
       id: 4,
@@ -52,7 +60,7 @@ export const ARTISTS = {
       image: pic4,
       description: "Internationally acclaimed bassist and vocalist",
       cowries: 0,
-      reviews: []
+      reviews: [],
     },
     {
       id: 5,
@@ -63,7 +71,7 @@ export const ARTISTS = {
       image: pic5,
       description: "Dynamic performer of traditional Beti rhythms",
       cowries: 0,
-      reviews: []
+      reviews: [],
     },
     {
       id: 6,
@@ -74,7 +82,7 @@ export const ARTISTS = {
       image: pic6,
       description: "Socially conscious singer and guitarist",
       cowries: 0,
-      reviews: []
+      reviews: [],
     },
     {
       id: 7,
@@ -85,7 +93,7 @@ export const ARTISTS = {
       image: pic7,
       description: "Talented singer-songwriter with a unique voice",
       cowries: 0,
-      reviews: []
+      reviews: [],
     },
     {
       id: 8,
@@ -96,7 +104,7 @@ export const ARTISTS = {
       image: pic8,
       description: "Veteran makossa artist with a golden voice",
       cowries: 0,
-      reviews: []
+      reviews: [],
     },
     {
       id: 9,
@@ -107,18 +115,18 @@ export const ARTISTS = {
       image: pic9,
       description: "Vibrant performer of modern bikutsi",
       cowries: 0,
-      reviews: []
+      reviews: [],
     },
     {
       id: 10,
       name: "Franck Biyong",
       region: "Centre",
-      niche: "Afrofunk",
+      niche: "Bikutsi",
       price: 3800,
       image: pic1,
       description: "Innovative guitarist blending funk and African rhythms",
       cowries: 0,
-      reviews: []
+      reviews: [],
     },
     {
       id: 11,
@@ -126,21 +134,21 @@ export const ARTISTS = {
       region: "Southwest",
       niche: "Afropop",
       price: 3000,
-      image: pic2,
+      image: pic13,
       description: "Rising star in the Cameroonian pop scene",
       cowries: 0,
-      reviews: []
+      reviews: [],
     },
     {
       id: 12,
       name: "Blick Bassy",
       region: "Centre",
-      niche: "Folk",
+      niche: "Bikutsi",
       price: 3500,
       image: pic3,
       description: "Soulful singer preserving the Bassa language through music",
       cowries: 0,
-      reviews: []
+      reviews: [],
     },
     {
       id: 13,
@@ -151,29 +159,29 @@ export const ARTISTS = {
       image: pic4,
       description: "Iconic female makossa artist",
       cowries: 0,
-      reviews: []
+      reviews: [],
     },
     {
       id: 14,
       name: "Salatiel",
-      region: "Northwest",
+      region: "Southwest",
       niche: "Afrobeats",
       price: 3500,
-      image: pic5,
+      image: pic18,
       description: "Multi-talented producer and performer",
       cowries: 0,
-      reviews: []
+      reviews: [],
     },
     {
       id: 15,
       name: "Sally Nyolo",
       region: "South",
-      niche: "World Music",
+      niche: "Jazz",
       price: 4200,
       image: pic6,
       description: "Former Zap Mama member with a unique musical style",
       cowries: 0,
-      reviews: []
+      reviews: [],
     },
     {
       id: 16,
@@ -182,9 +190,10 @@ export const ARTISTS = {
       niche: "Jazz",
       price: 3800,
       image: pic7,
-      description: "Guitarist and composer blending African and Western influences",
+      description:
+        "Guitarist and composer blending African and Western influences",
       cowries: 0,
-      reviews: []
+      reviews: [],
     },
     {
       id: 17,
@@ -192,65 +201,99 @@ export const ARTISTS = {
       region: "Centre",
       niche: "Bikutsi",
       price: 3500,
-      image: pic8,
+      image: pic16,
       description: "Energetic bikutsi performer known for her stage presence",
       cowries: 0,
-      reviews: []
+      reviews: [],
     },
     {
       id: 18,
       name: "Askia",
       region: "North",
-      niche: "Hip-hop",
+      niche: "Jazz",
       price: 2800,
       image: pic9,
-      description: "Talented rapper pushing the boundaries of Cameroonian hip-hop",
+      description:
+        "Talented rapper pushing the boundaries of Cameroonian hip-hop",
       cowries: 0,
-      reviews: []
+      reviews: [],
     },
     {
       id: 19,
       name: "Koppo",
       region: "West",
-      niche: "Rap",
+      niche: "Makossa",
       price: 3000,
-      image: pic1,
-      description: "Pioneering rapper known for his witty lyrics",
+      image: pic7,
+      description: "Pioneering Rapper known for his witty lyrics",
       cowries: 0,
-      reviews: []
+      reviews: [],
     },
     {
       id: 20,
-      name: "Flavour N'abania",
+      name: "Blaise B",
       region: "Southwest",
-      niche: "Highlife",
+      niche: "Afrobets",
       price: 5000,
       image: pic2,
       description: "Popular highlife and Afrobeats artist",
       cowries: 0,
-      reviews: []
+      reviews: [],
     },
     {
       id: 21,
-      name: "Flavour N'abania",
-      region: "Southwest",
-      niche: "Highlife",
+      name: "Shweng King",
+      region: "Northwest",
+      niche: "Jazz",
       price: 5000,
       image: pic2,
-      description: "Popular highlife and Afrobeats artist",
+      description: "Popular Jazz and Afrobeats artist",
       cowries: 0,
-      reviews: []
+      reviews: [],
     },
     {
       id: 22,
       name: "Flavour N'abania",
       region: "Southwest",
-      niche: "Highlife",
+      niche: "Afropop",
       price: 5000,
       image: pic2,
       description: "Popular highlife and Afrobeats artist",
       cowries: 0,
-      reviews: []
-    }
-  ]
+      reviews: [],
+    },
+    {
+      id: 23,
+      name: "Nora Sama",
+      region: "Southwest",
+      niche: "Afropop",
+      price: 5000,
+      image: pic12,
+      description: "Popular Afropop and Afrobeats artist",
+      cowries: 0,
+      reviews: [],
+    },
+    {
+      id: 24,
+      name: "Mr Leo",
+      region: "Southwest",
+      niche: "Afropop",
+      price: 4000,
+      image: pic17,
+      description: "Iconic Male Afropop artist",
+      cowries: 0,
+      reviews: [],
+    },
+    {
+      id: 25,
+      name: "Flavour N'abania",
+      region: "Southwest",
+      niche: "Afropop",
+      price: 5000,
+      image: pic2,
+      description: "Popular highlife and Afrobeats artist",
+      cowries: 0,
+      reviews: [],
+    },
+  ],
 };
