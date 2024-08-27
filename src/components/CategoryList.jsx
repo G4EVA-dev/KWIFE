@@ -1,10 +1,6 @@
-import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ChevronRight } from "lucide-react";
 
 const CategoryList = ({ selectedRegion, setSelectedRegion }) => {
-  const navigate = useNavigate();
-
   const regions = [
     "Adamawa",
     "Centre",
@@ -17,10 +13,6 @@ const CategoryList = ({ selectedRegion, setSelectedRegion }) => {
     "Southwest",
     "West",
   ];
-
-  const handleSeeMoreClick = () => {
-    navigate("/all-regions");
-  };
 
   const handleRegionClick = (region) => {
     setSelectedRegion(region);
@@ -35,15 +27,6 @@ const CategoryList = ({ selectedRegion, setSelectedRegion }) => {
     >
       <div className="flex justify-between items-center mb-4">
         <h5 className="text-xl font-bold text-white">Regional Categories</h5>
-        <motion.button
-          onClick={handleSeeMoreClick}
-          className="text-gray-200 hover:text-green-800 transition duration-300 ease-in-out flex items-center"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          See More
-          <ChevronRight size={20} className="ml-1" />
-        </motion.button>
       </div>
       <div className="overflow-x-auto scrollbar-hide">
         <div className="flex gap-2 pb-4">
