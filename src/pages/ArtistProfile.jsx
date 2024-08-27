@@ -144,6 +144,7 @@ const ArtistProfile = () => {
               <p className="text-amber-500 mt-2">Thank you for your support!</p>
             )}
           </div>
+          <Link to='/lyrics' className="text-bold text-xl text-white">Look at some of my cool lyrics</Link>
         </div>
         <CowrieAnimation isAnimating={isAnimating} />
       </header>
