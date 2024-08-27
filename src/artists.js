@@ -20,7 +20,7 @@ export const ARTISTS = {
   artists: [
     {
       id: 1,
-      name: "Manu Dibango",
+      name: "Manuella",
       region: "Littoral",
       niche: "Makossa",
       price: 5000,
