@@ -1,13 +1,30 @@
+import { Link } from "react-router-dom";
+
 function GameHero() {
   return (
     <div>
       <div className="bg-green-900 h-[175px] w-full p-[20px]  ">
-        <nav className=" flex justify-between items-center ">
-          <img src="/images/harmbuger.svg" alt="Harmburger Menu" />
-          <img src="/images/profile.svg" alt="Profie Picture" />
+        <nav className="flex justify-between items-center">
+          <Link to="/learn" className="flex items-center gap-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="white"
+              className="h-6 w-6"
+              aria-label="Back"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+              />
+            </svg>
+            <h1 className="text-white text-lg font-semibold">Learn</h1>
+          </Link>
         </nav>
         <div className="mt-5">
-          <p className="text-[14px] font-normal text-white ">Hello, James</p>
           <h1 className="mt-[10px] text-white font-bold text-[20px] ">
             Let&apos;s test your knowledge
           </h1>
