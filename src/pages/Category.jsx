@@ -5,12 +5,12 @@ import { Link } from "react-router-dom";
 
 const welcomePhrases = [
   { language: "English", phrase: "Welcomes you" },
-  { language: "Bulu", phrase: "A yéne woé" },
-  { language: "Duala", phrase: "A sómba oa" },
-  { language: "Ewondo", phrase: "A yéne woé" },
+  { language: "Bulu", phrase: "Mbamba tye" },
+  { language: "Duala", phrase: "Pô la ɓwâm" },
+  { language: "Ewondo", phrase: "masuk" },
   { language: "Fang", phrase: "A yebe wa" },
-  { language: "Fulfulde", phrase: "E jaɓɓi ma" },
-  { language: "Bassa", phrase: "A yéne woé" },
+  { language: "Fulfulde", phrase: "Jaɓɓaama" },
+  { language: "Bassa", phrase: "Ḿ kpɔ̃ m̀ hwìǐ (sg) À kpɔ̃ m̀ hwìǐ (pl)" },
 ];
 
 const colors = ["#007A5E", "#CE1126", "#FCD116"]; // Cameroon flag colors
