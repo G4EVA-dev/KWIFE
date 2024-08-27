@@ -1,24 +1,28 @@
-import { ARTISTS } from "../ARTISTS";
+import { ARTISTS } from "../artists";
 import ArtistCard from "./ArtistCard";
 
 function Popular() {
   const popularArtists = ARTISTS.artists.slice(0, 4);
 
   return (
+    <div className="mt-4">
+      <h1 className="text-[22px] font-bold ">Popular Artists</h1>
+      <div
+        className="overflow-x-auto whitespace-nowrap py-4 px-2"
+        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+      >
+        <div className="flex " style={{ paddingBottom: "20px" }}>
+          {popularArtists.map((artist) => (
+            <ArtistCard key={artist.id} artist={artist} />
+          ))}
+        </div>
 
-    <div className="overflow-x-auto whitespace-nowrap py-4 px-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
-              <h2 className="text-xl font-bold mb-4">Popular Artists</h2>
-      <div className="flex space-x-4" style={{ paddingBottom: '20px' }}>
-
-        {popularArtists.map((artist) => (
-          <ArtistCard key={artist.id} artist={artist} />
-        ))}
+        <style jsx>{`
+          .overflow-x-auto::-webkit-scrollbar {
+            display: none;
+          }
+        `}</style>
       </div>
-      <style jsx>{`
-        .overflow-x-auto::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
     </div>
   );
 }

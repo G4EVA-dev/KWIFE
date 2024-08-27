@@ -9,24 +9,21 @@ function GameProper() {
       id: "bakweri",
       name: "Bakweri Language App",
       question: "10 Questions",
-      time: "1 hour 15 min",
-      review: "4.7",
+      time: "1 hour 00 min",
       route: "/game/game-one",
     },
     {
-      id: "graphicDesign",
-      name: "Bakweri Language App",
+      id: "banso",
+      name: "Banso Language App",
       question: "10 Questions",
       time: "1 hour 15 min",
-      review: "4.1",
       route: "/game/game-two",
     },
     {
-      id: "art",
-      name: "Bakweri Language App",
-      question: "10 Questions",
-      time: "1 hour 15 min",
-      review: "4.5",
+      id: "bayangi",
+      name: "Bayangi Language App",
+      question: "15 Questions",
+      time: "1 hour 30 min",
       route: "/game/game-three",
     },
   ];
@@ -59,7 +56,7 @@ function GameProper() {
             >
               <div className="bg-[#C4C4C4] w-[127px] h-[96px] rounded-[3px]"></div>
               <div className="rounded-[10px] h-[96px] gap-[2px] p-2 flex flex-col items-start w-full">
-                <h3 className="text-green-600 text-[16px] font-bold">
+                <h3 className="text-black text-[18px]  font-bold">
                   {item.name}
                 </h3>
                 <p className="text-[#999999] text-[16px] font-normal flex items-center justify-center gap-[2px]">
@@ -69,12 +66,6 @@ function GameProper() {
                 <p className="text-[#999999] text-[16px] font-normal flex items-center justify-center gap-[2px]">
                   <img src="/images/timer.svg" alt="Timer" />
                   {item.time}
-                </p>
-              </div>
-              <div>
-                <p className="text-green-300 font-bold text-[16px] flex items-center justify-center pr-[20px] gap-[2px]">
-                  <img src="/images/star.svg" alt="Review" />
-                  {item.review}
                 </p>
               </div>
             </Link>
