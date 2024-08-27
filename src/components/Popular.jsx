@@ -11,7 +11,7 @@ function Popular() {
         className="overflow-x-auto whitespace-nowrap py-4 px-2"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
-        <div className="flex " style={{ paddingBottom: "20px" }}>
+        <div className="flex space-x-4" style={{ paddingBottom: "20px" }}>
           {popularArtists.map((artist) => (
             <ArtistCard key={artist.id} artist={artist} />
           ))}
