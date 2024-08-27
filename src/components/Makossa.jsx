@@ -4,7 +4,7 @@ import ArtistCard from "./ArtistCard";
 function Makossa() {
   const makossaArtists = ARTISTS.artists
     .filter((artist) => artist.niche === "Makossa")
-    .slice(0, 7);
+    .slice(0, 5);
 
   return (
     <div>
@@ -14,7 +14,7 @@ function Makossa() {
         className="overflow-x-auto whitespace-nowrap py-4 px-2"
         style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
       >
-        <div className="flex" style={{ paddingBottom: "20px" }}>
+        <div className="flex space-x-4" style={{ paddingBottom: "20px" }}>
           {makossaArtists.map((artist) => (
             <ArtistCard key={artist.id} artist={artist} />
           ))}

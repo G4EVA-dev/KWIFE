@@ -1,7 +1,29 @@
+import { Link } from "react-router-dom";
+
 const Laws = () => {
   return (
     <div className="bg-gradient-to-b from-green-900 to-neutral-900 min-h-screen text-neutral-100">
       <div className="m-auto lg:text-justify lg:w-[1150px] p-6 md:p-12">
+        <nav className="mt-1 mb-4  flex justify-between items-center">
+          <Link to="/home" className="flex items-center gap-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="white"
+              className="h-6 w-6"
+              aria-label="Back"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+              />
+            </svg>
+            <h1 className="text-white text-lg font-semibold">Home</h1>
+          </Link>
+        </nav>
         <h1 className="text-4xl font-bold text-center text-green-300 mt-6 mb-8">
           Entertainment: Music Publishing in Cameroon
         </h1>

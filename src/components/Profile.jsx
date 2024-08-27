@@ -10,6 +10,7 @@ import {
   Music,
   Video,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const PersonalAccountPage = () => {
   const { state } = useLocation();
@@ -61,13 +62,32 @@ const PersonalAccountPage = () => {
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-b from-green-100 to-yellow-100 text-green-800 font-sans">
       <header className="bg-green-800 p-4 sm:p-6">
+        <nav className="mt-1 mb-4  flex justify-between items-center">
+          <Link to="/home" className="flex items-center gap-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="white"
+              className="h-6 w-6"
+              aria-label="Back"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+              />
+            </svg>
+            <h1 className="text-white text-lg font-semibold">Home</h1>
+          </Link>
+        </nav>
         <div className="container mx-auto max-w-6xl flex flex-col sm:flex-row items-center justify-between">
-          <div className="flex items-center mb-4 sm:mb-0">
-            <img
-              src={user.profilePic || user.image}
-              alt={user.name}
-              className="w-16 h-16 rounded-full object-cover border-2 border-yellow-400 mr-4"
-            />
+          <div className="flex items-center mb-4 gap-2 sm:mb-0">
+            <div className="w-16 h-16 rounded-full flex items-center justify-center border-2 border-yellow-400">
+              <h1 className="text-white">GU</h1>
+            </div>
+
             <div>
               <h1 className="text-2xl font-bold text-white">{user.name}</h1>
               <p className="text-sm text-green-200">

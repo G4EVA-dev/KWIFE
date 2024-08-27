@@ -1,5 +1,5 @@
-import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import { Menu, Book, Home as HomeIcon, Scale, UserRound } from "lucide-react";
 import SearchBar from "../components/Searchbar";
 import CategoryList from "../components/CategoryList";
@@ -125,26 +125,30 @@ function Home() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {(searchQuery ? filteredArtists : filteredRegions).length > 0 ? (
-                (searchQuery ? filteredArtists : filteredRegions).map((artist) => (
-                  <motion.div
-                    key={artist.id}
-                    className="bg-neutral-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
-                    whileHover={{ scale: 1.05 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <img
-                      src={artist.image}
-                      alt={artist.name}
-                      className="w-full h-48 object-cover"
-                    />
-                    <div className="p-3 flex-grow flex flex-col">
-                      <h3 className="text-sm font-medium text-white mb-1 line-clamp-2">
-                        {artist.name}
-                      </h3>
-                      <p className="text-xs text-neutral-400">{artist.niche}</p>
-                    </div>
-                  </motion.div>
-                ))
+                (searchQuery ? filteredArtists : filteredRegions).map(
+                  (artist) => (
+                    <motion.div
+                      key={artist.id}
+                      className="bg-neutral-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+                      whileHover={{ scale: 1.05 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <img
+                        src={artist.image}
+                        alt={artist.name}
+                        className="w-full h-48 object-cover"
+                      />
+                      <div className="p-3 flex-grow flex flex-col">
+                        <h3 className="text-sm font-medium text-white mb-1 line-clamp-2">
+                          {artist.name}
+                        </h3>
+                        <p className="text-xs text-neutral-400">
+                          {artist.niche}
+                        </p>
+                      </div>
+                    </motion.div>
+                  )
+                )
               ) : (
                 <p className="text-neutral-400">No artists found.</p>
               )}
@@ -152,7 +156,10 @@ function Home() {
           </div>
         ) : (
           <>
-            <CategoryList selectedRegion={selectedRegion} setSelectedRegion={setSelectedRegion} />
+            <CategoryList
+              selectedRegion={selectedRegion}
+              setSelectedRegion={setSelectedRegion}
+            />
             <Popular artists={filteredArtists} />
             <Makossa artists={filteredArtists} />
             <Afropop artists={filteredArtists} />

@@ -3,7 +3,7 @@ import { ARTISTS } from '../artists';
 import ArtistCard from './ArtistCard';
 
 function Afropop() {
-  const afropopArtists = ARTISTS.artists.filter(artist => artist.niche === "Afropop").slice(0, 4);
+  const afropopArtists = ARTISTS.artists.filter(artist => artist.niche === "Afropop").slice(0, 5);
 
   return (
     <div className="overflow-x-auto whitespace-nowrap py-4 px-2" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>

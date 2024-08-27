@@ -70,7 +70,7 @@ function PeopleAndFamilyLesson() {
         <div className="w-full flex items-center justify-center">
           <Link
             to="/learn/people/quiz"
-            className="bg-blue-500 text-center w-full hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-[3px] transition duration-300 ease-in-out transform hover:scale-105"
+            className="bg-green-400 hover:bg-green-300 text-gray-800 text-center w-full font-bold py-2 px-5 rounded-[3px] transition duration-300 ease-in-out transform hover:scale-105"
           >
             Take the Quiz!
           </Link>
