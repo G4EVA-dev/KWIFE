@@ -8,7 +8,7 @@ const vocabulary = [
     translation: "Grand Father",
     image: "/images/grandFather.png",
   },
-  { word: "ŋmànà", translation: "Grand Mother", image: "child.svg" },
+  { word: "ŋmànà", translation: "Grand Mother", image: "/images/grandMother.png" },
   { word: "mólɔ̀n", translation: "Mother", image: "/images/woman.png" },
   { word: "mòmí", translation: "Father", image: "/images/man.png" },
   { word: "tátá", translation: "father", image: "/images/father.png" },
@@ -63,10 +63,10 @@ function PeopleAndFamilyLesson() {
           </div>
         </div>
 
-        <div className="text-center">
+        <div className="w-full flex items-center justify-center">
           <Link
             to="/learn/people/quiz"
-            className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
+            className="bg-blue-500 text-center w-full hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-[3px] transition duration-300 ease-in-out transform hover:scale-105"
           >
             Take the Quiz!
           </Link>

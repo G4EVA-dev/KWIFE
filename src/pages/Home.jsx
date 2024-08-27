@@ -1,18 +1,19 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Menu, Search, Home as HomeIcon, Music, Star, Radio } from 'lucide-react';
-import SearchBar from '../components/Searchbar';
-import CategoryList from '../components/CategoryList';
-import Footer from '../components/Footer';
-import Popular from '../components/Popular';
-import Makossa from '../components/Makossa';
-import Afropop from '../components/AfroPop';
-import Jazz from '../components/Jazz';
-import Bikutsi from '../components/Bikutsi';
-import { ARTISTS } from '../ARTISTS';
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import { Menu, Book, Home as HomeIcon, Scale, UserRound } from "lucide-react";
+import SearchBar from "../components/Searchbar";
+import CategoryList from "../components/CategoryList";
+import Footer from "../components/Footer";
+import Popular from "../components/Popular";
+import Makossa from "../components/Makossa";
+import Afropop from "../components/Afropop";
+import Jazz from "../components/Jazz";
+import Bikutsi from "../components/Bikutsi";
+import { ARTISTS } from "../artists";
+import { Link } from "react-router-dom";
 
 function Home() {
-  const [searchQuery, setSearchQuery] = useState('');
+  const [searchQuery, setSearchQuery] = useState("");
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const allArtists = [...ARTISTS.artists];
@@ -25,11 +26,10 @@ function Home() {
   );
 
   const sidebarItems = [
-    { icon: <HomeIcon />, label: 'Home' },
-    { icon: <Search />, label: 'Search' },
-    { icon: <Music />, label: 'Library' },
-    { icon: <Star />, label: 'Favorites' },
-    { icon: <Radio />, label: 'Radio' },
+    { icon: <HomeIcon />, label: "Home", slug: "/home" },
+    { icon: <Book />, label: "Lessons", slug: "/learn" },
+    { icon: <Scale />, label: "Law", slug: "/laws" },
+    { icon: <UserRound />, label: "Profile", slug: "/profile" },
   ];
 
   return (
@@ -43,13 +43,14 @@ function Home() {
       >
         <h1 className="text-3xl font-bold text-amber-500 mb-8">KWIFE</h1>
         {sidebarItems.map((item, index) => (
-          <div
+          <Link
+            to={item.slug}
             key={index}
             className="flex items-center mb-4 cursor-pointer hover:bg-neutral-700 p-2 rounded transition-colors duration-200"
           >
             {item.icon}
             <span className="ml-2 text-lg">{item.label}</span>
-          </div>
+          </Link>
         ))}
       </motion.div>
 
@@ -69,7 +70,7 @@ function Home() {
         {isSidebarOpen && (
           <motion.div
             className="md:hidden fixed inset-0 bg-neutral-800 text-white p-4 z-50"
-            initial={{ x: '-100%' }}
+            initial={{ x: "-100%" }}
             animate={{ x: 0 }}
             transition={{ duration: 0.3 }}
           >

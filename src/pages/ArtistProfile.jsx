@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useLocation } from "react-router";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const ArtistProfile = () => {
   const { state } = useLocation();
@@ -14,9 +14,35 @@ const ArtistProfile = () => {
   // Destructure artist data from state
   const { artist } = state || {}; // Use fallback if state is undefined
 
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    navigate(-1);
+  };
+
   return (
     <div className="bg-neutral-900 min-h-screen text-neutral-100 font-sans">
       <header className="bg-gradient-to-b from-green-900 to-neutral-900 p-4 sm:p-8">
+        <nav className="mt-2 mb-4 flex justify-between items-center">
+          <button onClick={handleGoBack} className="flex items-center gap-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="white"
+              className="h-6 w-6"
+              aria-label="Back"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+              />
+            </svg>
+            <span className="text-white text-lg font-semibold">Back</span>
+          </button>
+        </nav>
         <div className="container mx-auto flex flex-col sm:flex-row items-center">
           <img
             src={artist?.image || "/path/to/placeholder-image.jpg"} // Use artist image or placeholder
@@ -30,8 +56,19 @@ const ArtistProfile = () => {
             <p className="text-lg sm:text-xl text-neutral-400">
               {artist?.region || "Artist Region"}
             </p>
-           <div> <p className="text-sm mt-4"> Enjoy {artist?.name}'s traditional music learn dialects <Link to="/game" className="text font-extrabold text-amber-500">Here</Link></p>
-           </div>
+            <div>
+              {" "}
+              <p className="text-sm mt-4">
+                {" "}
+                Enjoy {artist?.name}&apos;s traditional music learn dialects{" "}
+                <Link
+                  to="/learn"
+                  className="text font-extrabold text-amber-500"
+                >
+                  Here
+                </Link>
+              </p>
+            </div>
           </div>
           <div className="text-center sm:text-right">
             <div className="bg-green-700 text-amber-100 px-4 py-2 rounded-full inline-block mb-4">
@@ -40,8 +77,13 @@ const ArtistProfile = () => {
             <br />
             <button
               onClick={sendCowrie}
-              className="bg-amber-500 text-neutral-900 px-6 py-3 rounded-full text-lg font-bold hover:bg-amber-400 transition duration-300"
+              className="bg-amber-500 text-neutral-900 px-3 py-2 rounded-full text-lg font-bold hover:bg-amber-400 transition duration-300 flex items-center justify-center gap-2 "
             >
+              <img
+                src="/images/cowrie.png"
+                className="w-[30px] h-320px] "
+                alt="Cowrie"
+              />
               Send a Cowrie
             </button>
             {cowrieSent && (
@@ -101,9 +143,9 @@ const ArtistProfile = () => {
             {artist?.name} is a renowned Cameroonian artist dedicated to
             preserving and promoting traditional folk music through modern
             interpretations. With roots deep in the cultural heritage of
-            Cameroon, {artist?.name}&lsquo;s music is a bridge between past and present,
-            inviting listeners on a journey through the rich tapestry of African
-            rhythms and melodies.
+            Cameroon, {artist?.name}&lsquo;s music is a bridge between past and
+            present, inviting listeners on a journey through the rich tapestry
+            of African rhythms and melodies.
           </p>
         </section>
       </main>

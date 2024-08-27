@@ -28,15 +28,13 @@ const CategoryList = () => {
 
   return (
     <motion.div
-      className="p-6 mb-8"
+      className="md:p-6 mt-3 md:mb-2"
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
     >
       <div className="flex justify-between items-center mb-4">
-        <h5 className="text-xl font-bold text-white">
-          Regional Categories
-        </h5>
+        <h5 className="text-xl font-bold text-white">Regional Categories</h5>
         <motion.button
           onClick={handleSeeMoreClick}
           className="text-gray-200 hover:text-green-800 transition duration-300 ease-in-out flex items-center"
