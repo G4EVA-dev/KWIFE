@@ -9,6 +9,7 @@ import GameOne from "./pages/game/game-one";
 import GameOneGame from "./pages/game/game-one-game";
 import Auth from "./pages/Auth";
 import Learn from "./pages/learn"; 
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
   return (
@@ -19,7 +20,15 @@ function App() {
         <Route path="/home/profile" element={<Profile />} />
         <Route path="/game" element={<Game />} />
         <Route path="/auth" element ={<Auth/>}/>
-        <Route path="/artist-profile" element={<ArtistProfile />} />
+        {/* <Route path="/artist-profile" element={<ArtistProfile />} /> */}
+        <Route 
+          path="/artist-profile" 
+          element={
+            <ProtectedRoute>
+              <ArtistProfile />
+            </ProtectedRoute>
+          } 
+        />
         <Route path="/album-songs" element={<AlbumSongs />} />
         <Route path="/game/game-one" element={<GameOne />} />
         <Route path="/game/game-one/game" element={<GameOneGame />} />
