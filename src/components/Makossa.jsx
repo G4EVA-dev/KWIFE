@@ -1,4 +1,3 @@
-import React from "react";
 import { ARTISTS } from "../artists";
 import ArtistCard from "./ArtistCard";
 

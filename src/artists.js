@@ -229,7 +229,7 @@ export const ARTISTS = {
       description: "Popular highlife and Afrobeats artist",
       cowries: 0,
       reviews: []
-    }
+    },
     {
       id: 21,
       name: "Flavour N'abania",
@@ -240,7 +240,7 @@ export const ARTISTS = {
       description: "Popular highlife and Afrobeats artist",
       cowries: 0,
       reviews: []
-    }
+    },
     {
       id: 22,
       name: "Flavour N'abania",
