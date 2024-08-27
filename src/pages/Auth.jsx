@@ -25,15 +25,14 @@ function Auth({ onSuccessfulAuth }) {
 
       if (authToken) {
         localStorage.setItem('authToken', authToken);
-        console.log('Authentication successful:', authToken); // Log success
         if (onSuccessfulAuth) onSuccessfulAuth();
       } else {
         alert('Authentication failed');
-        console.log('Authentication failed'); // Log failure
       }
     } catch (err) {
       console.error('Authentication error:', err);
     }
+    console.log()
   };
 
   const loginUser = async (email, password) => {
@@ -44,7 +43,6 @@ function Auth({ onSuccessfulAuth }) {
       body: JSON.stringify({ email, password }),
     });
     const data = await response.json();
-    console.log('Login response:', data); // Log response data
     return data.token; // Adjust this if your API returns the token differently
   };
 
@@ -56,7 +54,6 @@ function Auth({ onSuccessfulAuth }) {
       body: JSON.stringify({ name, email, password }),
     });
     const data = await response.json();
-    console.log('Registration response:', data); // Log response data
     return data.token; // Adjust this if your API returns the token differently
   };
 
