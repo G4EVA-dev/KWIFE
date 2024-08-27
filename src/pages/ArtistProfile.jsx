@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
+import CowrieAnimation from "../components/cowrieAnimation";
 
 const ArtistProfile = () => {
   const { state } = useLocation();
@@ -8,6 +9,7 @@ const ArtistProfile = () => {
   const [songs, setSongs] = useState([]);
   const [albums, setAlbums] = useState([]);
   const [currentSong, setCurrentSong] = useState(null); // Track the current song
+  const [isAnimating, setIsAnimating] = useState(false);
 
   // Fetch songs from the API
   useEffect(() => {
@@ -43,10 +45,10 @@ const ArtistProfile = () => {
     fetchAlbums();
   }, []);
 
-  const sendCowrie = () => {
-    setCowrieSent(true);
-    setTimeout(() => setCowrieSent(false), 3000);
-  };
+  // const sendCowrie = () => {
+  //   setCowrieSent(true);
+  //   setTimeout(() => setCowrieSent(false), 3000);
+  // };
 
   // Destructure artist data from state
   const { artist } = state || {}; // Use fallback if state is undefined
@@ -64,9 +66,38 @@ const ArtistProfile = () => {
     setCurrentSong(song);
   };
 
+  const sendCowrie = () => {
+    setCowrieSent(true);
+    setIsAnimating(true); // Start animation
+    setTimeout(() => {
+      setCowrieSent(false);
+      setIsAnimating(false); // Stop animation after 1.5 seconds
+    }, 1500);
+  };
+
   return (
     <div className="bg-neutral-900 min-h-screen text-neutral-100 font-sans">
       <header className="bg-gradient-to-b from-green-900 to-neutral-900 p-4 sm:p-8">
+        <nav className="mt-1 mb-4  flex justify-between items-center">
+          <Link to="/home" className="flex items-center gap-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="white"
+              className="h-6 w-6"
+              aria-label="Back"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18"
+              />
+            </svg>
+            <h1 className="text-white text-lg font-semibold">Home</h1>
+          </Link>
+        </nav>
         <div className="container mx-auto flex flex-col sm:flex-row items-center">
           <img
             src={artist?.image || "/path/to/placeholder-image.jpg"} // Use artist image or placeholder
@@ -96,20 +127,25 @@ const ArtistProfile = () => {
             <div className="bg-green-700 text-amber-100 px-4 py-2 rounded-full inline-block mb-4 mr-4">
               Available for hire
             </div>
-          
+
             <br />
             <button
               onClick={sendCowrie}
-              className="bg-amber-500 text-neutral-900 px-6 py-3 rounded-full text-lg font-bold hover:bg-amber-400 transition duration-300 mr-3"
+              className="bg-amber-500 text-neutral-900 px-6 py-3 rounded-full text-lg font-bold hover:bg-amber-400 transition duration-300 mr-3 flex justify-center items-center "
             >
+              <img
+                src="/images/cowrie.png"
+                className="w-[30px] h-[30px] "
+                alt="Cowrie"
+              />
               Send a Cowrie
             </button>
             {cowrieSent && (
               <p className="text-amber-500 mt-2">Thank you for your support!</p>
             )}
           </div>
-          <Link to='/lyrics' className="font-bold text-xl">Learn my popular lyrics</Link>
         </div>
+        <CowrieAnimation isAnimating={isAnimating} />
       </header>
 
       <main className="container mx-auto p-4 sm:p-8">
