@@ -11,7 +11,7 @@ const PersonalAccountPage = () => {
 
   const user = state?.artist || {
     name: "Acha Nfon",
-    email: "acha.nfon@example.com",
+    email: "acha.nfonn@example.com",
     profilePic: "/path/to/profile-pic.jpg",
     favoriteArtists: ["Mballa Elanga", "Richard Bona", "Manu Dibango"],
     recentlyPlayed: [
