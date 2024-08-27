@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Menu, Book, Home as HomeIcon, Scale, UserRound } from "lucide-react";
 import SearchBar from "../components/Searchbar";
