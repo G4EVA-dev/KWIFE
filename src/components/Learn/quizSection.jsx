@@ -74,17 +74,18 @@ function QuizPage() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg "
+        className="max-w-md mx-auto mt-8 p-6 bg-white rounded-lg"
       >
         <h2 className="text-2xl font-bold mb-4">Game Over!</h2>
         <p className="mb-4">
           You&apos;re out of lives. Your final score: {score}
         </p>
+        
         <motion.button
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           onClick={restartGame}
-          className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded w-full mb-2"
+          className="bg-green-300 hover:bg-green-600 text-white font-bold py-2 px-4 rounded w-full mb-2"
         >
           Restart Game
         </motion.button>
@@ -107,60 +108,62 @@ function QuizPage() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="max-w-md mx-auto  p-6 bg-green-900 h-[200px]  md:border-2 md:mt-4 "
+      className="w-full h-screen flex items-center justify-center bg-green-900"
     >
-      <h2 className="text-2xl mt-5 text-white font-bold mb-4 text-center">
-        Mokpe Quiz: People and Family
-      </h2>
-      <div className="flex justify-between items-center mb-4">
-        <p className="text-lg text-white font-semibold">Score: {score}</p>
-        <p className="text-lg text-white ">Lives: {"❤️".repeat(lives)}</p>
-      </div>
-      <motion.div
-        initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1 }}
-        className="bg-blue-100 p-4 rounded-lg mb-4"
-      >
-        <p className="text-xl font-bold text-center mb-2">
-          &quot;{currentQuestion.word}&quot;
-        </p>
-        <p className="text-center text-gray-600">
-          What does this mean in English?
-        </p>
-      </motion.div>
-      <div className="grid grid-cols-1 gap-2 mb-4">
-        {options.map((option, index) => (
-          <motion.button
-            key={index}
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            onClick={() => handleAnswerSelect(option)}
-            className={`w-full p-3 rounded-lg text-lg font-semibold ${
-              selectedAnswer === option
-                ? selectedAnswer === currentQuestion.translation
-                  ? "bg-green-500 text-white"
-                  : "bg-red-500 text-white"
-                : "bg-gray-200 hover:bg-gray-300"
-            }`}
-            disabled={selectedAnswer !== null}
-          >
-            {option}
-          </motion.button>
-        ))}
-      </div>
-      {feedback && (
+      <div className="max-w-md w-full p-6 bg-green-900 md:border-2 md:border-white rounded-lg">
+        <h2 className="text-2xl mt-5 text-white font-bold mb-4 text-center">
+          Mokpe Quiz: People and Family
+        </h2>
+        <div className="flex justify-between items-center mb-4">
+          <p className="text-lg text-white font-semibold">Score: {score}</p>
+          <p className="text-lg text-white">Lives: {"❤️".repeat(lives)}</p>
+        </div>
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          className={`p-3 rounded-lg ${
-            feedback.startsWith("Correct")
-              ? "bg-green-100 text-green-800"
-              : "bg-red-100 text-red-800"
-          }`}
+          initial={{ y: 20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          className="bg-blue-100 p-4 rounded-lg mb-4"
         >
-          <p className="text-center font-semibold">{feedback}</p>
+          <p className="text-xl font-bold text-center mb-2">
+            &quot;{currentQuestion.word}&quot;
+          </p>
+          <p className="text-center text-gray-600">
+            What does this mean in English?
+          </p>
         </motion.div>
-      )}
+        <div className="grid grid-cols-1 gap-2 mb-4">
+          {options.map((option, index) => (
+            <motion.button
+              key={index}
+              whileHover={{ scale: 1.03 }}
+              whileTap={{ scale: 0.97 }}
+              onClick={() => handleAnswerSelect(option)}
+              className={`w-full p-3 rounded-lg text-lg font-semibold ${
+                selectedAnswer === option
+                  ? selectedAnswer === currentQuestion.translation
+                    ? "bg-green-500 text-white"
+                    : "bg-red-500 text-white"
+                  : "bg-gray-200 hover:bg-gray-300"
+              }`}
+              disabled={selectedAnswer !== null}
+            >
+              {option}
+            </motion.button>
+          ))}
+        </div>
+        {feedback && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className={`p-3 rounded-lg ${
+              feedback.startsWith("Correct")
+                ? "bg-green-100 text-green-800"
+                : "bg-red-100 text-red-800"
+            }`}
+          >
+            <p className="text-center font-semibold">{feedback}</p>
+          </motion.div>
+        )}
+      </div>
     </motion.div>
   );
 }
