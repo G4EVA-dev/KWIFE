@@ -5,7 +5,7 @@ import { LogOut, Plus, Music, Video } from "lucide-react"; // Removed unused Set
 import { Link } from "react-router-dom";
 
 const PersonalAccountPage = () => {
-  const { user, loginWithRedirect, logout, isAuthenticated } = useAuth0(); // Removed unused isLoading
+  const { user, loginWithRedirect, logout, isAuthenticated } = useAuth0();
   const [showAddModal, setShowAddModal] = useState(false);
   const [uploads, setUploads] = useState([]);
 
