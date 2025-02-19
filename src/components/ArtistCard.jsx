@@ -1,4 +1,4 @@
-import React from "react";
+import PropTypes from "prop-types"; // Import PropTypes
 import { useAuth0 } from "@auth0/auth0-react";
 import { useNavigate } from "react-router-dom";
 
@@ -29,6 +29,15 @@ function ArtistCard({ artist }) {
     </div>
   );
 }
+
+// Define propTypes for the artist prop
+ArtistCard.propTypes = {
+  artist: PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    region: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default ArtistCard;
 
