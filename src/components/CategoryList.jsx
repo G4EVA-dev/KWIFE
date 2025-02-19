@@ -29,7 +29,7 @@ const CategoryList = ({ selectedRegion, setSelectedRegion }) => {
         <h5 className="text-xl font-bold text-white">Regional Categories</h5>
       </div>
       <div className="overflow-x-auto scrollbar-hide">
-        <div className="flex gap-2 pb-4">
+        <div className="flex gap-2 pb-4 justify-around">
           {regions.map((region) => (
             <motion.button
               key={region}

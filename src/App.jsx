@@ -13,6 +13,10 @@ import People from "./components/Learn/people";
 import QuizPage from "./components/Learn/quizSection";
 import LyricsModule from "./components/LyricsModule";
 import Laws from "./pages/laws";
+import PhrasesAndBasicSentencesLesson from "./components/Learn/phrasesAndGreetings";
+import CommonAnimalsLesson from "./components/Learn/AnimalLesson";
+import NatureAndEnvironmentLesson from "./components/Learn/NatureLesson";
+import BasicBodyPartsLesson from "./components/Learn/BodyPart";
 
 function App() {
   return (
@@ -30,7 +34,17 @@ function App() {
         <Route path="/profile" element={<Profile />} />
         <Route path="/learn" element={<Learn />} />
         <Route path="/learn/people" element={<People />} />
+        <Route path="/learn/animals" element={<CommonAnimalsLesson />} />
+        <Route path="/learn/nature" element={<NatureAndEnvironmentLesson />} />
+        <Route path="/learn/body" element={<BasicBodyPartsLesson />} />
+        <Route
+          path="/learn/phrases"
+          element={<PhrasesAndBasicSentencesLesson />}
+        />
         <Route path="/learn/people/quiz" element={<QuizPage />} />
+        <Route path="/learn/phrases/quiz" element={<QuizPage />} />
+        <Route path="/learn/animals/quiz" element={<QuizPage />} />
+        <Route path="/learn/nature/quiz" element={<QuizPage />} />
         <Route path="/art" element={<ArtistProfile />} />
         <Route path="/lyrics" element={<LyricsModule />} />
         <Route path="/laws" element={<Laws />} />
