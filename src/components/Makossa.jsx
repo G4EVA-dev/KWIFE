@@ -12,19 +12,17 @@ function Makossa() {
 
       <div
         className="overflow-x-auto whitespace-nowrap py-4 px-2"
-        style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        style={{
+          scrollbarWidth: "none",
+          msOverflowStyle: "none",
+          WebkitOverflowScrolling: "touch",
+        }}
       >
         <div className="flex space-x-4" style={{ paddingBottom: "20px" }}>
           {makossaArtists.map((artist) => (
             <ArtistCard key={artist.id} artist={artist} />
           ))}
         </div>
-
-        <style jsx>{`
-          .overflow-x-auto::-webkit-scrollbar {
-            display: none;
-          }
-        `}</style>
       </div>
     </div>
   );
