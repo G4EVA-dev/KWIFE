@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { FaHeart, FaShare, FaEllipsisH } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { FaHeart, FaShare, FaEllipsisH } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import PropTypes from "prop-types";
 
 const LyricsModule = ({ isPublisher }) => {
   const [currentLyrics, setCurrentLyrics] = useState({
@@ -9,8 +10,10 @@ const LyricsModule = ({ isPublisher }) => {
     album: "The Tale",
     year: "2003",
     language: "Douala and Douala",
-    lyrics: "Mbemb'a muntula moto nye pon maladi\nBodu bwe bwaba jita\nowasi tè mbusa min mimbu mi tombi\nBiya na bodun bwe nde bonam\nBiala bongo wèngè be pon nde maleya\nLonguè le ndè nika\no wemi tè idiba bwa nde munyègè\no leiyè pè besombè ngeya longè",
-    translation: "The tears of an old man are too sad\nThe road is very long\nIf you dig into the past years\nKnow that old age is a blessing\nYour words are advice to me today\nThat's life\nWhen you wake up in the morning, just be happy\nTeach the young the way of life"
+    lyrics:
+      "Mbemb'a muntula moto nye pon maladi\nBodu bwe bwaba jita\nowasi tè mbusa min mimbu mi tombi\nBiya na bodun bwe nde bonam\nBiala bongo wèngè be pon nde maleya\nLonguè le ndè nika\no wemi tè idiba bwa nde munyègè\no leiyè pè besombè ngeya longè",
+    translation:
+      "The tears of an old man are too sad\nThe road is very long\nIf you dig into the past years\nKnow that old age is a blessing\nYour words are advice to me today\nThat's life\nWhen you wake up in the morning, just be happy\nTeach the young the way of life",
   });
 
   const [showMore, setShowMore] = useState(false);
@@ -21,12 +24,19 @@ const LyricsModule = ({ isPublisher }) => {
     <div className="bg-gradient-to-b from-green-800 to-green-900 min-h-screen text-white p-4">
       <div className="max-w-4xl mx-auto">
         <header className="mb-8">
-          <h1 className="text-4xl md:text-6xl font-bold mb-2">{currentLyrics.title}</h1>
+          <h1 className="text-4xl md:text-6xl font-bold mb-2">
+            {currentLyrics.title}
+          </h1>
           <p className="text-xl text-green-300">{currentLyrics.artist}</p>
-          <p className="mt-2 text-green-200">Album: {currentLyrics.album} ({currentLyrics.year})</p>
+          <p className="mt-2 text-green-200">
+            Album: {currentLyrics.album} ({currentLyrics.year})
+          </p>
           <p className="text-green-200">Language: {currentLyrics.language}</p>
           <p className="mt-4 text-green-200">
-            Enjoy traditional music and learn dialects <Link to='/learn'><span className="text-yellow-400 cursor-pointer">Here</span></Link>
+            Enjoy traditional music and learn dialects{" "}
+            <Link to="/learn">
+              <span className="text-yellow-400 cursor-pointer">Here</span>
+            </Link>
           </p>
         </header>
 
@@ -50,16 +60,20 @@ const LyricsModule = ({ isPublisher }) => {
           <div className="md:flex md:space-x-8">
             <div className="md:w-1/2 mb-6 md:mb-0">
               <h2 className="text-2xl font-semibold mb-4">Original Lyrics</h2>
-              <pre className="whitespace-pre-line font-sans">{currentLyrics.lyrics}</pre>
+              <pre className="whitespace-pre-line font-sans">
+                {currentLyrics.lyrics}
+              </pre>
             </div>
             <div className="md:w-1/2">
               <h2 className="text-2xl font-semibold mb-4">Translation</h2>
-              <pre className="whitespace-pre-line font-sans">{currentLyrics.translation}</pre>
+              <pre className="whitespace-pre-line font-sans">
+                {currentLyrics.translation}
+              </pre>
             </div>
           </div>
 
           {!showMore && (
-            <button 
+            <button
               onClick={toggleShowMore}
               className="mt-8 bg-green-600 hover:bg-green-500 px-6 py-2 rounded-full transition block mx-auto"
             >
@@ -81,6 +95,12 @@ const LyricsModule = ({ isPublisher }) => {
       </div>
     </div>
   );
+};
+
+LyricsModule.propTypes = {
+  isPublisher: PropTypes.shape({
+    isPublisher: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export default LyricsModule;
