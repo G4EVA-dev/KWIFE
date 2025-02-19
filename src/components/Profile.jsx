@@ -1,19 +1,11 @@
 import { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
+// import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
-import {
-  Settings,
-  LogOut,
-  Plus,
-  ToggleLeft,
-  ToggleRight,
-  Music,
-  Video,
-} from "lucide-react";
+import { Settings, LogOut, Plus, Music, Video } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const PersonalAccountPage = () => {
-  const { state } = useLocation();
+  // const { state } = useLocation();
   const [availableForHire, setAvailableForHire] = useState(false);
   const [showAddModal, setShowAddModal] = useState(false);
   const [uploads, setUploads] = useState([]);
@@ -128,7 +120,7 @@ const PersonalAccountPage = () => {
 
         {uploads.length === 0 ? (
           <p className="text-center text-gray-600">
-            You haven't uploaded anything yet.
+            You haven&apos;t uploaded anything yet.
           </p>
         ) : (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
