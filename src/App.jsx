@@ -13,6 +13,7 @@ import People from "./components/Learn/people";
 import QuizPage from "./components/Learn/quizSection";
 import LyricsModule from "./components/LyricsModule";
 import Laws from "./pages/laws";
+import ProtectedRoute from "./components/Authentication/ProtectedRoute";
 
 function App() {
   return (
@@ -23,11 +24,28 @@ function App() {
         <Route path="/home/profile" element={<Profile />} />
         <Route path="/game" element={<Game />} />
         <Route path="/auth" element={<Auth />} />
-        <Route path="/artist-profile" element={<ArtistProfile />} />
+        {/* <Route path="/artist-profile" element={<ArtistProfile />} /> */}
+
+        <Route
+          path="/artist-profile"
+          element={
+            <ProtectedRoute>
+              <ArtistProfile />
+            </ProtectedRoute>
+          }
+        />
+
         <Route path="/album-songs" element={<AlbumSongs />} />
         <Route path="/game/game-one" element={<GameOne />} />
         <Route path="/game/game-one/game" element={<GameOneGame />} />
-        <Route path="/profile" element={<Profile />} />
+        <Route
+          path="/profile"
+          element={
+            <ProtectedRoute>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
         <Route path="/learn" element={<Learn />} />
         <Route path="/learn/people" element={<People />} />
         <Route path="/learn/people/quiz" element={<QuizPage />} />
