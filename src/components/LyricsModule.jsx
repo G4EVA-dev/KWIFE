@@ -99,8 +99,8 @@ const LyricsModule = ({ isPublisher }) => {
 
 LyricsModule.propTypes = {
   isPublisher: PropTypes.shape({
-    isPublisher: PropTypes.string.isRequired,
-  }).isRequired,
+    isPublisher: PropTypes.string,
+  }),
 };
 
 export default LyricsModule;
