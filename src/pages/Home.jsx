@@ -11,6 +11,7 @@ import Jazz from "../components/Jazz";
 import Bikutsi from "../components/Bikutsi";
 import { ARTISTS } from "../artists";
 import { Link } from "react-router-dom";
+import AuthButtons from "../components/Authentication/AuthButtons";
 
 function Home() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -31,9 +32,9 @@ function Home() {
     ? ARTISTS.artists.filter((artist) => artist.region === selectedRegion)
     : ARTISTS.artists;
 
-  const handleRegionClick = (region) => {
-    setSelectedRegion(region);
-  };
+  // const handleRegionClick = (region) => {
+  //   setSelectedRegion(region);
+  // };
 
   const handleClearFilter = () => {
     setSelectedRegion("");
@@ -105,6 +106,8 @@ function Home() {
             ))}
           </motion.div>
         )}
+
+        <AuthButtons />
 
         <SearchBar searchQuery={searchQuery} setSearchQuery={setSearchQuery} />
 
