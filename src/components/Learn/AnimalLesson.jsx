@@ -3,12 +3,12 @@ import VocabCard from "./vocabCard";
 import { Link } from "react-router-dom";
 
 const animals = [
-  { word: "Mbwa", translation: "Dog", image: "/images/dog.png" },
-  { word: "Nyau", translation: "Cat", image: "/images/cat.png" },
-  { word: "Ngulu", translation: "Pig", image: "/images/pig.png" },
-  { word: "Nkoko", translation: "Chicken", image: "/images/chicken.png" },
-  { word: "Mpusa", translation: "Goat", image: "/images/goat.png" },
-  { word: "Ngombe", translation: "Cow", image: "/images/cow.png" },
+  { word: "Mbwa", translation: "Dog", /*image: "/images/dog.png"*/ },
+  { word: "Nyau", translation: "Cat", /*image: "/images/cat.png"*/ },
+  { word: "Ngulu", translation: "Pig", /*image: "/images/pig.png"*/ },
+  { word: "Nkoko", translation: "Chicken", /*image: "/images/chicken.png"*/ },
+  { word: "Mpusa", translation: "Goat", /*image: "/images/goat.png"*/ },
+  { word: "Ngombe", translation: "Cow", /*image: "/images/cow.png"*/ },
 ];
 
 function CommonAnimalsLesson() {

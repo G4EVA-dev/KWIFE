@@ -12,11 +12,11 @@ function VocabCard({ word, translation, image }) {
       <div className="relative p-4 pb-[100%]">
         {!isFlipped ? (
           <div className="absolute inset-0 flex flex-col items-center justify-center p-4">
-            <img
+            {image&&<img
               src={image}
               alt={word}
               className="w-21 h-21 mb-3  rounded-[3px] "
-            />
+            />}
             <h3 className="text-xl font-bold text-center">{translation}</h3>
           </div>
         ) : (
