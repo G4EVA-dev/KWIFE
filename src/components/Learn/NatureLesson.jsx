@@ -3,12 +3,12 @@ import VocabCard from "./vocabCard";
 import { Link } from "react-router-dom";
 
 const natureItems = [
-  { word: "Mbûa", translation: "Rain", image: "/images/rain.png" },
-  { word: "Moti", translation: "Tree", image: "/images/tree.png" },
-  { word: "Nwè", translation: "Sun", image: "/images/sun.png" },
-  { word: "Mbewo", translation: "Wind", image: "/images/wind.png" },
-  { word: "Monyi", translation: "Moon", image: "/images/moon.png" },
-  { word: "Mbulu", translation: "River", image: "/images/river.png" },
+  { word: "Mbûa", translation: "Rain", /*image: "/images/rain.png"*/ },
+  { word: "Moti", translation: "Tree", /*image: "/images/tree.png"*/ },
+  { word: "Nwè", translation: "Sun", /*image: "/images/sun.png"*/ },
+  { word: "Mbewo", translation: "Wind", /*image: "/images/wind.png"*/ },
+  { word: "Monyi", translation: "Moon", /*image: "/images/moon.png"*/ },
+  { word: "Mbulu", translation: "River", /*image: "/images/river.png"*/ },
 ];
 
 function NatureAndEnvironmentLesson() {

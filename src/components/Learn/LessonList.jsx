@@ -34,31 +34,25 @@ const lessons = [
   {
     id: 6,
     title: "Health and Feelings",
-    category: "Body Parts and Health",
+    category: "Health and Feelings",
     slug: "/learn/health",
   },
   {
     id: 7,
-    title: "Alphaets",
-    category: "Body Parts and Health",
+    title: "Alphabets",
+    category: "Reading and Writing",
     slug: "/learn/alphabet",
   },
   {
     id: 8,
     title: "Numbers",
-    category: "Body Parts and Health",
+    category: "Reading and Writing",
     slug: "/learn/numbers",
   },
   {
     id: 9,
-    title: "Health and Feelings",
-    category: "Body Parts and Health",
-    slug: "/learn/health",
-  },
-  {
-    id: 10,
     title: "Food",
-    category: "Body Parts and Health",
+    category: "Food and nutrition",
     slug: "/learn/food",
   },
 ];

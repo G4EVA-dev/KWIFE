@@ -17,6 +17,10 @@ import PhrasesAndBasicSentencesLesson from "./components/Learn/phrasesAndGreetin
 import CommonAnimalsLesson from "./components/Learn/AnimalLesson";
 import NatureAndEnvironmentLesson from "./components/Learn/NatureLesson";
 import BasicBodyPartsLesson from "./components/Learn/BodyPart";
+import HealthAndFeelings from "./components/Learn/HealthAndFeelings";
+import Alphabet from "./components/Learn/Alphabet";
+import Numbers from "./components/Learn/Numbers";
+import Food from "./components/Learn/Food";
 
 function App() {
   return (
@@ -37,6 +41,10 @@ function App() {
         <Route path="/learn/animals" element={<CommonAnimalsLesson />} />
         <Route path="/learn/nature" element={<NatureAndEnvironmentLesson />} />
         <Route path="/learn/body" element={<BasicBodyPartsLesson />} />
+        <Route path="/learn/health" element={<HealthAndFeelings/>}/>
+        <Route path="/learn/alphabet" element={<Alphabet/>}/>
+        <Route path="/learn/numbers" element={<Numbers/>}/>
+        <Route path="/learn/food" element={<Food/>}/>
         <Route
           path="/learn/phrases"
           element={<PhrasesAndBasicSentencesLesson />}

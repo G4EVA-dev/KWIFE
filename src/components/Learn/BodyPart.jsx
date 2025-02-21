@@ -3,12 +3,12 @@ import VocabCard from "./vocabCard";
 import { Link } from "react-router-dom";
 
 const bodyParts = [
-  { word: "Mokò", translation: "Head", image: "/images/head.png" },
-  { word: "Maso", translation: "Eyes", image: "/images/eyes.png" },
-  { word: "Ntò", translation: "Nose", image: "/images/nose.png" },
-  { word: "Makanò", translation: "Hands", image: "/images/hands.png" },
-  { word: "Makolo", translation: "Legs", image: "/images/legs.png" },
-  { word: "Mbò", translation: "Mouth", image: "/images/mouth.png" },
+  { word: "Mokò", translation: "Head", /*image: "/images/head.png"*/ },
+  { word: "Maso", translation: "Eyes", /*image: "/images/eyes.png"*/ },
+  { word: "Ntò", translation: "Nose", /*image: "/images/nose.png"*/ },
+  { word: "Makanò", translation: "Hands", /*image: "/images/hands.png"*/ },
+  { word: "Makolo", translation: "Legs", /*image: "/images/legs.png"*/ },
+  { word: "Mbò", translation: "Mouth", /*image: "/images/mouth.png"*/ },
 ];
 
 function BasicBodyPartsLesson() {
